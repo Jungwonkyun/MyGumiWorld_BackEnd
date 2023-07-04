@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.mygumi.insider.InsiderApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.907 s - in com.mygumi.insider.InsiderApplicationTests
