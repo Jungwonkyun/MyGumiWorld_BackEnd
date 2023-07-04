@@ -11,6 +11,7 @@
 	<groupId>com.mygumi</groupId>
 	<artifactId>insider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>insider</name>
 	<description>insider</description>
 	<properties>
