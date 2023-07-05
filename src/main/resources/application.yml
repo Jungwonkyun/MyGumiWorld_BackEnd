@@ -19,16 +19,15 @@ spring:
       matching-strategy: ant_path_matcher
   application:
     name: InsiderApplication
-
-jpa:
-  database: mysql
-  database-platform: org.hibernate.dialect.MySQL8Dialect
-  show-sql: true
-  hibernate:
-    ddl-auto: update
-  properties:
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
     hibernate:
-      format_sql: true
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
 
 mybatis:
   type-aliases-package: com.mygumi.insider.dto
