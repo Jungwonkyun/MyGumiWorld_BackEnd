@@ -28,7 +28,7 @@ public class MainController {
     @GetMapping("/login")
     public ResponseEntity<?> oauthLogin() throws IOException {
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(URI.create("https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=d17798d61b78b91a8abfca3e6f914fe5&redirect_uri=http://localhost:8080/api/auth/kakao&prompt=login"));
+        headers.setLocation(URI.create("https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=d17798d61b78b91a8abfca3e6f914fe5&redirect_uri=https://mygumiworld-backend-flkcc.run.goorm.io/api/auth/kakao&prompt=login"));
         return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
     }
 
@@ -41,7 +41,7 @@ public class MainController {
         String accessToken = jwt.replaceAll("Bearer ", "");
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(URI.create("https://kauth.kakao.com/oauth/logout?client_id=d17798d61b78b91a8abfca3e6f914fe5&logout_redirect_uri=http://localhost:8080/api/auth/kakao"));
+        headers.setLocation(URI.create("https://kauth.kakao.com/oauth/logout?client_id=d17798d61b78b91a8abfca3e6f914fe5&logout_redirect_uri=https://mygumiworld-backend-flkcc.run.goorm.io/api/auth/kakao"));
         return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
     }
 
