@@ -21,21 +21,21 @@ public class Tip {
 
     private String subject;
 
-    private String discription;
+    private String description;
 
     private int good;
 
     @Builder
-    public Tip(int id, String subject, String discription, int good) {
+    public Tip(int id, String subject, String description, int good) {
         this.id = id;
         this.subject = subject;
-        this.discription = discription;
+        this.description = description;
         this.good = good;
     }
 
     @Override
     public String toString(){
-        return this.id+" "+this.subject+" "+this.discription+" "+this.good;
+        return this.id+" "+this.subject+" "+this.description+" "+this.good;
     }
 }
 
