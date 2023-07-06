@@ -37,7 +37,7 @@ public class WeatherServiceImpl implements WeatherService {
 	@Override
 	public Map<String, Object> getWeather() throws Exception {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		nowDate = LocalDate.now();
+        nowDate = LocalDate.now();
 		nowTime = LocalTime.now();
 		Date = nowDate.format(formatDay);
 		int min = Integer.parseInt(nowTime.format(formatMin));
@@ -53,6 +53,11 @@ public class WeatherServiceImpl implements WeatherService {
 				hour = 23;
 			}
 		}
+        hour = hour + 9;
+        if(hour > 23){
+            Date = nowDate.plusDays(1).format(formatDay);
+            hour = hour - 24;
+        }
 		String hourString = Integer.toString(hour);
 		if(hourString.length()==1)
 			hourString = "0" + hourString;
