@@ -32,4 +32,5 @@ public interface BoardService {
 
 	void deleteReply(String replyNo) throws Exception;
 
+    void likeBoard(String boardNo, long id) throws Exception;
 }

@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import com.mygumi.insider.domain.oauth.AuthTokensGenerator;
+import io.swagger.annotations.ApiParam;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,7 @@ import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin(origins = { "*" }, maxAge=600)
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/board")
 @Api(value="Board 컨트롤러 API")
 public class BoardController {
@@ -32,8 +36,10 @@ public class BoardController {
 	private final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
-	@Autowired
+
 	private BoardService boardService;
+
+	private final AuthTokensGenerator authTokensGenerator;
 	
 	// 닉네임 join 필요
 	@ApiOperation(value = "전체 게시판 반환(목록 형태)")
@@ -57,8 +63,12 @@ public class BoardController {
 	// 닉네임 join 필요
 	@ApiOperation(value = "게시물 상세보기 및 댓글+대댓글 반환")
 	@GetMapping("/{boardNo}")
-	public ResponseEntity<Map<String, Object>> getBoard(@PathVariable("boardNo")int boardNo){
+	public ResponseEntity<Map<String, Object>> getBoard(
+			@ApiParam(value = "해당 유저의 JWT 토큰") @RequestHeader("Authorization") String jwt,
+			@PathVariable("boardNo")int boardNo){
 		logger.info("게시글 {}번 반환", boardNo);
+		String accessToken = jwt.replace("Bearer ", "");
+		long id = authTokensGenerator.extractMemberId(accessToken);
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
 			//게시글 내용 반환
@@ -67,6 +77,8 @@ public class BoardController {
 			//댓글+답글 내용 반환
 			List<CommentDto> comments = boardService.getBoardcomments(boardNo);
 			resultMap.put("comments", comments);
+			//좋아요 여부 반환
+
 			resultMap.put("message", SUCCESS);
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
 		}catch(Exception e) {
@@ -79,16 +91,12 @@ public class BoardController {
 	@ApiOperation(value = "게시물 쓰기")
 	@PostMapping("/writeBoard")
 	public ResponseEntity<Map<String, Object>> writeBoard(
-			@RequestPart(value="boardDto") BoardDto boardDto, @RequestPart(value = "files", required = false) MultipartFile[] files){
-//	@ApiOperation(value = "게시물 쓰기")
-//	@PostMapping("/writeBoard")
-//	public ResponseEntity<Map<String, Object>> writeBoard(@RequestBody Map<String,Object> boardInfo){
-//		
-//		MultipartFile file = (MultipartFile) boardInfo.get("fileInfo");
-//		BoardDto boardDto = (BoardDto) boardInfo.get("boardDtoInfo");
-		
+			@RequestHeader("Authorization") String jwt, @RequestPart(value="boardDto") BoardDto boardDto, @RequestPart(value = "files", required = false) MultipartFile[] files){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("게시물 작성");
+		String accessToken = jwt.replace("Bearer ", "");
+		long id = authTokensGenerator.extractMemberId(accessToken);
+		boardDto.setWriterId(id);
 		logger.debug("게시물 내용 {}:", boardDto);
 		
 		try {
@@ -116,15 +124,12 @@ public class BoardController {
 	@ApiOperation(value = "댓글 작성")
 	@PostMapping("/writeComment")
 	public ResponseEntity<Map<String, Object>> writeComment(
-			// @RequestParam String content, @RequestParam String boardNo, @RequestParam String writerId, @RequestParam String writerName){
-			@RequestBody CommentDto commentDto){
-			Map<String, Object> resultMap = new HashMap<String, Object>();
+			@RequestHeader("Authorization") String jwt, @RequestBody CommentDto commentDto){
+		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("댓글 작성");
-		// CommentDto commentDto = new CommentDto();
-		// commentDto.setContent(content);
-		// commentDto.setWriterId(writerId);
-		// commentDto.setWriterName(writerName);
-		// commentDto.setBoardNo(boardNo);
+		String accessToken = jwt.replace("Bearer ", "");
+		long id = authTokensGenerator.extractMemberId(accessToken);
+		commentDto.setWriterId(id);
 		logger.debug("댓글 내용 {}:", commentDto);
 		try {
 			boardService.writeComment(commentDto);
@@ -140,17 +145,12 @@ public class BoardController {
 	@ApiOperation(value = "대댓글 작성")
 	@PostMapping("/writeReply")
 	public ResponseEntity<Map<String, Object>> writeReply(
-		@RequestBody ReplyCommentDto replyDto){
-			// @RequestParam String content, @RequestParam String boardNo, @RequestParam String commentNo,
-			// @RequestParam String writerId, @RequestParam String writerName){
+			@RequestHeader("Authorization") String jwt, @RequestBody ReplyCommentDto replyDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("대댓글 작성");
-		// ReplyCommentDto replyDto = new ReplyCommentDto();
-		// replyDto.setBoardNo(boardNo);
-		// replyDto.setCommentNo(commentNo);
-		// replyDto.setContent(content);
-		// replyDto.setWriterId(writerId);
-		// replyDto.setWriterName(writerName);
+		String accessToken = jwt.replace("Bearer ", "");
+		long id = authTokensGenerator.extractMemberId(accessToken);
+		replyDto.setWriterId(id);
 		logger.debug("대댓글 내용 {}:", replyDto);
 		try {
 			boardService.writeReply(replyDto);
@@ -166,19 +166,14 @@ public class BoardController {
 	@ApiOperation(value = "게시글 수정")
 	@PutMapping("/modifyBoard")
 	public ResponseEntity<Map<String, Object>> modifyBoard(
-			@RequestBody BoardDto boardDto){
+			@RequestHeader("Authorization") String jwt, @RequestBody BoardDto boardDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		// jwt 받아서 수정
-		String writerId = null;
+		String accessToken = jwt.replace("Bearer ", "");
+		long id = authTokensGenerator.extractMemberId(accessToken);
 		logger.info("게시글 수정 작성");
-		if(boardDto.getWriterId() == null || writerId == null) {
-			logger.info("실패 : null값 입력");
-			resultMap.put("message", FAIL);
-			resultMap.put("reason", "null value");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
-		}
+
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!boardDto.getWriterId().equals(writerId)) {
+		if(boardDto.getWriterId() != id) {
 			logger.info("실패 : 다른 사람의 게시글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -202,18 +197,15 @@ public class BoardController {
 	@ApiOperation(value = "댓글 수정")
 	@PutMapping("/modifyComment")
 	public ResponseEntity<Map<String, Object>> modifyComment(
-			@RequestBody CommentDto commentDto){
-		String writerId = "";
+			@RequestHeader("Authorization") String jwt, @RequestBody CommentDto commentDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+
 		logger.info("댓글 수정 작성");
-		if(commentDto.getWriterId() == null || writerId == null) {
-			logger.info("실패 : null값 입력");
-			resultMap.put("message", FAIL);
-			resultMap.put("reason", "null value");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
-		}
+		String accessToken = jwt.replace("Bearer ", "");
+		long id = authTokensGenerator.extractMemberId(accessToken);
+
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!commentDto.getWriterId().equals(writerId)) {
+		if(commentDto.getWriterId()!=id) {
 			logger.info("실패 : 다른 사람의 댓글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -237,18 +229,13 @@ public class BoardController {
 	@ApiOperation(value = "대댓글 수정")
 	@PutMapping("/modifyReply")
 	public ResponseEntity<Map<String, Object>> modifyReply(
-			@RequestBody ReplyCommentDto replyDto){
+			@RequestHeader("Authorization") String jwt, @RequestBody ReplyCommentDto replyDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		String writerId = "";
 		logger.info("대댓글 수정 작성");
-		if(replyDto.getWriterId() == null || writerId == null) {
-			logger.info("실패 : null값 입력");
-			resultMap.put("message", FAIL);
-			resultMap.put("reason", "null value");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
-		}
+		String accessToken = jwt.replace("Bearer ", "");
+		long id = authTokensGenerator.extractMemberId(accessToken);
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!replyDto.getWriterId().equals(writerId)) {
+		if(replyDto.getWriterId()!=id) {
 			logger.info("실패 : 다른 사람의 대댓글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -272,18 +259,13 @@ public class BoardController {
 	@ApiOperation(value = "게시글 삭제")
 	@PutMapping("/deleteBoard")
 	public ResponseEntity<Map<String, Object>> deleteBoard(
-			@RequestParam String boardNo, @RequestParam String BoardWriterId){
+			@RequestHeader("Authorization") String jwt, @RequestParam String boardNo, @RequestParam String BoardWriterId){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		String writerId = "";
 		logger.info("게시글 삭제");
-		if(BoardWriterId == null || writerId == null) {
-			logger.info("실패 : null값 입력");
-			resultMap.put("message", FAIL);
-			resultMap.put("reason", "null value");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
-		}
+		String accessToken = jwt.replace("Bearer ", "");
+		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!BoardWriterId.equals(writerId)) {
+		if(BoardWriterId.equals(id)) {
 			logger.info("실패 : 다른 사람의 게시글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -307,18 +289,13 @@ public class BoardController {
 	@ApiOperation(value = "댓글 삭제")
 	@PutMapping("/deleteComment")
 	public ResponseEntity<Map<String, Object>> deleteComment(
-			@RequestParam String commentNo, @RequestParam String commentWriterId){
+			@RequestHeader("Authorization") String jwt, @RequestParam String commentNo, @RequestParam String commentWriterId){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		String writerId = "";
 		logger.info("댓글 삭제");
-		if(commentWriterId == null || writerId == null) {
-			logger.info("실패 : null값 입력");
-			resultMap.put("message", FAIL);
-			resultMap.put("reason", "null value");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
-		}
+		String accessToken = jwt.replace("Bearer ", "");
+		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!commentWriterId.equals(writerId)) {
+		if(!commentWriterId.equals(id)) {
 			logger.info("실패 : 다른 사람의 댓글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -342,18 +319,13 @@ public class BoardController {
 	@ApiOperation(value = "대댓글 수정")
 	@PutMapping("/deleteReply")
 	public ResponseEntity<Map<String, Object>> deleteReply(
-			@RequestParam String replyNo, @RequestParam String replyWriterId){
+			@RequestHeader("Authorization") String jwt, @RequestParam String replyNo, @RequestParam String replyWriterId){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		String writerId = "";
 		logger.info("대댓글 삭제");
-		if(replyWriterId == null || writerId == null) {
-			logger.info("실패 : null값 입력");
-			resultMap.put("message", FAIL);
-			resultMap.put("reason", "null value");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
-		}
+		String accessToken = jwt.replace("Bearer ", "");
+		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!replyWriterId.equals(writerId)) {
+		if(!replyWriterId.equals(id)) {
 			logger.info("실패 : 다른 사람의 대댓글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -373,6 +345,27 @@ public class BoardController {
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);			
 		}
 	}
-	
-	
+
+	@ApiOperation(value = "좋아요 설정(좋아요)")
+	@PutMapping("/like")
+	public ResponseEntity<Map<String, Object>> likeBoard(
+			@RequestHeader("Authorization") String jwt, @RequestParam String boardNo){
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		logger.info("좋아요 설정");
+		String accessToken = jwt.replace("Bearer ", "");
+		long id = authTokensGenerator.extractMemberId(accessToken);
+
+		// 좋아요 설정
+		try {
+			boardService.likeBoard(boardNo, id);
+			resultMap.put("message", SUCCESS);
+			logger.info("성공");
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
+		}catch(Exception e) {
+			e.printStackTrace();
+			resultMap.put("message", FAIL);
+			logger.info("실패");
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
+		}
+	}
 }

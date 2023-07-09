@@ -99,5 +99,10 @@ public class BoardServiceImpl implements BoardService {
     public void deleteReply(String replyNo) throws Exception {
         boardMapper.deleteReply(replyNo);
     }
+
+    @Override
+    public void likeBoard(String boardNo, long id) throws Exception {
+        boardMapper.likeBoard(boardNo, id);
+    }
 }
 

@@ -14,7 +14,7 @@ public class CommentDto {
 	private String commentNo;
 	private String content;
 	private String boardNo;
-	private String writerId;
+	private long writerId;
 	private String writerName;
 	private String createDate;
 	private int status;

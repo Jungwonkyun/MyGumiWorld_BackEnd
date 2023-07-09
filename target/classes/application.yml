@@ -1,6 +1,8 @@
 jwt:
   secret-key: Z29nby10bS1zZXJ2ZXItZGxyamVvYW9yb3JodG9kZ290c3Atam9vbmdhbmduaW0teWVvbHNpbWhpaGFsZ2VveW8K
 
+server.port: 8080
+
 oauth:
   kakao:
     client-id: d17798d61b78b91a8abfca3e6f914fe5

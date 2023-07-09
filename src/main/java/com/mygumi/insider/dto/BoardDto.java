@@ -14,7 +14,7 @@ public class BoardDto {
 	private int hit;
 	private String createDate;
 	private String updateDate;
-	private String writerId;
+	private long writerId;
 	private String writerName;
 	private int likesNum;
 	// 해당 아이디 유저가 좋아요 눌렀는지 여부

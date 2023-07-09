@@ -44,4 +44,5 @@ public interface BoardMapper {
 	
 	public int getLikeStatus(int boardNo, int userId) throws SQLException;
 
+    void likeBoard(String boardNo, long id) throws SQLException;
 }
