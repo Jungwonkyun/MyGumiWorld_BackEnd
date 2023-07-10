@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import com.mygumi.insider.dto.Report;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -373,6 +374,23 @@ public class BoardController {
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);			
 		}
 	}
-	
+
+
+	@PostMapping("/report")
+	public ResponseEntity<Map<String, Object>> report(@RequestBody Report report){
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		try {
+			Report newReport =  boardService.report(report);
+			resultMap.put("message", SUCCESS);
+			resultMap.put("report", newReport);
+			logger.info("성공");
+		}catch(Exception e) {
+			e.printStackTrace();
+			resultMap.put("message", FAIL);
+			logger.info("실패");
+
+		}
+		return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
+	}
 	
 }

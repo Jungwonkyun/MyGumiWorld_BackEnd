@@ -4,19 +4,21 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import com.mygumi.insider.dto.*;
+import com.mygumi.insider.repository.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mygumi.insider.mapper.BoardMapper;
-import com.mygumi.insider.dto.BoardDto;
-import com.mygumi.insider.dto.CommentDto;
-import com.mygumi.insider.dto.ReplyCommentDto;
 
 @Service
 public class BoardServiceImpl implements BoardService {
 
     @Autowired
     private BoardMapper boardMapper;
+
+    @Autowired
+    ReportRepository reportRepository;
 
     @Override
     public List<BoardDto> getBoards() throws Exception{
@@ -99,5 +101,20 @@ public class BoardServiceImpl implements BoardService {
     public void deleteReply(String replyNo) throws Exception {
         boardMapper.deleteReply(replyNo);
     }
+
+    @Override
+    public Report report(Report reported) throws Exception {
+        Report report = Report.builder()
+                .id(reported.getId())
+                .reportedId(reported.getReportedId())
+                .report(reported.getReport())
+                .boardNo(reported.getBoardNo())
+                .build();
+
+        reportRepository.save(report);
+
+        return report;
+    }
+
 }
 
