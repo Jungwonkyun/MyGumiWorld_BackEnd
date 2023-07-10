@@ -6,7 +6,7 @@
 
 	<!-- 게시글 목록 출력 -->
 	<select id="getBoards" resultType="boardDto">
-		SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 20) content,
+		SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content,
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -18,17 +18,24 @@
 		WHERE status = 1
 		ORDER BY boardNo DESC;
 	</select>
+
+	<!-- 해당 게시물의 좋아요 여부 판단 -->
+		<select id="getLikeStatus" parameterType="String" resultType="long">
+			SELECT count(Id)
+			FROM likes
+			WHERE boardNo = #{boardNo} AND Id = #{userId};
+		</select>
 	
 	<!-- 조회수 하나 늘리기 -->
-	<update id="updateHit" parameterType="Int">
+	<update id="updateHit" parameterType="String">
 		UPDATE board
 		SET hit = hit + 1
 		WHERE boardNo = #{boardNo};
 	</update>
 	
 	<!-- 게시글 상세 내용 출력 -->
-	<select id="getBoardDetail" parameterType="Int" resultType="boardDto">
-		SELECT boardNo, title, content, hit, writerId, folder, saveName, originName, likeStatus,
+	<select id="getBoardDetail" parameterType="String" resultType="boardDto">
+		SELECT boardNo, title, content, hit, writerId, folder, saveName, originName, nickname AS writerName,
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -42,21 +49,18 @@
 			WHEN HOUR(TIMEDIFF(NOW(), updateDate)) <![CDATA[ <= ]]> 24 THEN
 				CONCAT(HOUR(TIMEDIFF(NOW(), updateDate)), '시간 전')
 			ELSE DATE_FORMAT(updateDate, '%Y-%m-%d')
-			END AS updateDate
-		FROM board
-		WHERE boardNo = #{boardNo};
-	</select>
-	
-	<!-- 게시글의 좋아요 수 가져오기 -->
-	<select id="getLikesNum" parameterType="Int" resultType="Int">
-		SELECT COUNT(*)
-		FROM likes
+			END AS updateDate,
+		(SELECT COUNT(Id)
+			FROM likes
+			WHERE boardNo = #{boardNo}) AS likesNum
+			FROM board
+		LEFT JOIN member ON(member.id = board.writerId)
 		WHERE boardNo = #{boardNo};
 	</select>
 	
 	<!-- 게시글의 댓글 출력 -->
-	<select id="getComments" parameterType="Int" resultType="commentDto">
-		SELECT commentNo, content, writerName, writerId, status,
+	<select id="getComments" parameterType="String" resultType="commentDto">
+		SELECT commentNo, content, nickname AS writerName, writerId, status,
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -65,12 +69,14 @@
 			ELSE DATE_FORMAT(createDate, '%Y-%m-%d')
 			END AS createDate
 		FROM comment
-		WHERE boardNo = #{boardNo};
+		LEFT JOIN member ON(member.id = comment.writerId)
+		WHERE boardNo = #{boardNo}
+		ORDER BY commentNo;
 	</select>
 	
 	<!-- 게시글의 대댓글 출력 -->
-	<select id="getReplys" parameterType="Int" resultType="replyCommentDto">
-		SELECT replyNo, commentNo, content, writerName, writerId,
+	<select id="getReplys" parameterType="String" resultType="replyCommentDto">
+		SELECT replyNo, commentNo, content, nickname AS writerName, writerId,
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -79,46 +85,47 @@
 			ELSE DATE_FORMAT(createDate, '%Y-%m-%d')
 			END AS createDate
 		FROM reply
+		LEFT JOIN member ON(member.id = reply.writerId)
 		WHERE boardNo = #{boardNo} AND status = 1
 		ORDER BY commentNo, replyNo;
 	</select>
 	
 	<!-- 게시글 작성 -->
 	<insert id="writeBoard" parameterType="boardDto">
-		INSERT INTO board(title, content, createDate, writerId, writerName, folder, originName, saveName)
-		VALUES(#{title}, #{content}, NOW(), #{writerId}, #{writerName}, #{folder}, #{originName}, #{saveName});
+		INSERT INTO board(title, content, createDate, writerId, folder, originName, saveName)
+		VALUES(#{title}, #{content}, NOW(), #{writerId}, #{folder}, #{originName}, #{saveName});
 	</insert>
 	
 	<!-- 댓글 작성 -->
 	<insert id="writeComment" parameterType="commentDto">
-		INSERT INTO comment(boardNo, content, createDate, writerId, writerName)
-		VALUES(#{boardNo}, #{content}, NOW(), #{writerId}, #{writerName});
+		INSERT INTO comment(boardNo, content, createDate, writerId, status)
+		VALUES(#{boardNo}, #{content}, NOW(), #{writerId}, 1);
 	</insert>
 	
 	<!-- 대댓글 작성 -->
 	<insert id="writeReply" parameterType="replyCommentDto">
-		INSERT INTO reply(commentNo, boardNo, content, createDate, writerId, writerName)
-		VALUES(#{commentNo}, #{boardNo}, #{content}, NOW(), #{writerId}, #{writerName})
+		INSERT INTO reply(commentNo, boardNo, content, createDate, writerId, status)
+		VALUES(#{commentNo}, #{boardNo}, #{content}, NOW(), #{writerId}, 1)
 	</insert>
 	
 	<!-- 게시물 수정 -->
 	<update id="modifyBoard" parameterType="boardDto">
 		UPDATE board
-		SET title = #{title}, content=#{content}, update_at = NOW()
+		SET title = #{title}, content=#{content}, update_at = NOW(), folder=#{folder}, originName=#{originName}, saveName=#{saveName}
 		WHERE boardNo = #{boardNo}
 	</update>
 	
 	<!-- 댓글 수정 -->
 	<update id="modifyComment" parameterType="commentDto">
 		UPDATE comment
-		SET content=#{content}, update_at = NOW()
+		SET content=#{content}
 		WHERE commentNo = #{commentNo}
 	</update>
 	
 	<!-- 대댓글 수정 -->
-	<update id="replyComment" parameterType="replyCommentDto">
+	<update id="modifyReply" parameterType="replyCommentDto">
 		UPDATE reply
-		SET content=#{content}, update_at = NOW()
+		SET content=#{content}
 		WHERE replyNo = #{replyNo}
 	</update>
 	
@@ -142,5 +149,60 @@
 		SET status = 0
 		WHERE replyNo = #{replyNo}
 	</update>
-	
+
+	<!-- 좋아요 설정 -->
+	<insert id="likeBoard" parameterType="String">
+		INSERT INTO likes(boardNo, createDate, Id)
+		VALUES(#{boardNo}, NOW(), #{id})
+	</insert>
+
+	<!-- 좋아요 해제 -->
+	<delete id="dislikeBoard" parameterType="String">
+		DELETE FROM likes
+		WHERE boardNo=#{boardNo} AND Id=#{id}
+	</delete>
+
+	<!-- 내가 쓴 글 목록 -->
+	<select id="getMyBoards" parameterType="String">
+		SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content,
+			CASE
+				WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
+					CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
+				WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 24 THEN
+					CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전')
+				ELSE DATE_FORMAT(createDate, '%Y-%m-%d')
+			END AS createDate
+		FROM board
+		WHERE status = 1 AND writerId = #{id};
+	</select>
+
+	<!-- 내가 쓴 댓글이 있는 글 목록 -->
+	<select id="getMyCommentBoards" parameterType="String">
+		SELECT DISTINCT(board.boardNo), title, hit, folder, saveName, originName, LEFT(board.content, 50) content,
+			CASE
+				WHEN HOUR(TIMEDIFF(NOW(), board.createDate)) <![CDATA[ <= ]]> 1 THEN
+					CONCAT(MINUTE(TIMEDIFF(NOW(), board.createDate)), '분 전')
+				WHEN HOUR(TIMEDIFF(NOW(), board.createDate)) <![CDATA[ <= ]]> 24 THEN
+					CONCAT(HOUR(TIMEDIFF(NOW(), board.createDate)), '시간 전')
+				ELSE DATE_FORMAT(board.createDate, '%Y-%m-%d')
+			END AS createDate
+		FROM comment, reply
+		LEFT JOIN board USING (boardNo)
+		WHERE board.status = 1 AND board.writerId = #{id} AND reply.status = 1 AND comment.status = 1;
+	</select>
+
+	<!-- 내가 좋아요 한 글 목록-->
+	<select id="getMyLikeBoards" parameterType="String">
+		SELECT DISTINCT(likes.boardNo), title, hit, folder, saveName, originName, LEFT(content, 50) content,
+			CASE
+			WHEN HOUR(TIMEDIFF(NOW(), board.createDate)) <![CDATA[ <= ]]> 1 THEN
+				CONCAT(MINUTE(TIMEDIFF(NOW(), board.createDate)), '분 전')
+			WHEN HOUR(TIMEDIFF(NOW(), board.createDate)) <![CDATA[ <= ]]> 24 THEN
+				CONCAT(HOUR(TIMEDIFF(NOW(), board.createDate)), '시간 전')
+			ELSE DATE_FORMAT(board.createDate, '%Y-%m-%d')
+			END AS createDate
+		FROM likes
+		LEFT JOIN board USING (boardNo)
+		WHERE status = 1 AND Id = #{id};
+	</select>
 </mapper>

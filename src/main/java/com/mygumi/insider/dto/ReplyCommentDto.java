@@ -10,7 +10,7 @@ public class ReplyCommentDto {
 	private String replyNo;
 	private String commentNo;
 	private String boardNo;
-	private long writerId;
+	private String writerId;
 	private String writerName;
 	private String createDate;
 	private String content;

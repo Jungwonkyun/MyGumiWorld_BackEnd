@@ -10,9 +10,11 @@ public interface BoardService {
 
 	List<BoardDto> getBoards() throws Exception;
 
-	BoardDto getBoardDetail(int boardNo) throws Exception;
+	BoardDto getBoardDetail(String boardNo) throws Exception;
 
-	List<CommentDto> getBoardcomments(int boardNo) throws Exception;
+	List<CommentDto> getBoardcomments(String boardNo) throws Exception;
+
+	long getBoardLikeStatus(String boardNo, String id) throws Exception;
 
 	void writeBoard(BoardDto boardDto) throws Exception;
 
@@ -32,5 +34,13 @@ public interface BoardService {
 
 	void deleteReply(String replyNo) throws Exception;
 
-    void likeBoard(String boardNo, long id) throws Exception;
+    void likeBoard(String boardNo, String id) throws Exception;
+
+	void dislikeBoard(String boardNo, String id) throws Exception;
+
+	List<BoardDto> getMyBoards(String id) throws Exception;
+
+	List<BoardDto> getMyCommentBoards(String id) throws Exception;
+
+	List<BoardDto> getMyLikeBoards(String id) throws Exception;
 }
