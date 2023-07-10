@@ -13,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -101,11 +103,12 @@ public class BoardController {
 	
 	@ApiOperation(value = "게시물 쓰기",
 			notes="한 게시물 당 사진은 하나만 저장, 1MB 이하만.\n" +
-					"웬만하면 포스트맨으로 테스트 부탁드립니다,, 포스트맨 설정은 카톡 부탁드려요\n" +
-					"파라미터 : \"boardDto\":{\"title\":\"제목\", \"content\":\"내용\"}, files : 배열 형태로 파일 전송")
+					"웬만하면 포스트맨으로 테스트 부탁드립니다,, 포스트맨 설정은 카톡 부탁드려요\n")
 	@PostMapping("/writeBoard")
 	public ResponseEntity<Map<String, Object>> writeBoard(
-			@RequestHeader("Authorization") String jwt, @RequestPart(value="boardDto") BoardDto boardDto, @RequestPart(value = "files", required = false) MultipartFile[] files){
+			@RequestHeader("Authorization") String jwt,
+			@ApiParam(value = "{\"title\":\"제목\", \"content\":\"내용\"}") @RequestPart(value="boardDto") BoardDto boardDto,
+			@ApiParam(value = "files(배열 형태)") @RequestPart(value = "files", required = false) MultipartFile[] files){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("게시물 작성");
 		String accessToken = jwt.replace("Bearer ", "");
@@ -124,6 +127,9 @@ public class BoardController {
 				boardDto.setSaveName(saveName);
 				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
 				file.transferTo(new File(projectPath+fileSavePath, saveName));
+
+				Resource resource = new UrlResource("file:" + projectPath+fileSavePath + saveName);
+				System.out.println(resource);
 			}
 			boardService.writeBoard(boardDto);
 			resultMap.put("message", SUCCESS);
@@ -138,7 +144,8 @@ public class BoardController {
 	@ApiOperation(value = "댓글 작성")
 	@PostMapping("/writeComment")
 	public ResponseEntity<Map<String, Object>> writeComment(
-			@RequestHeader("Authorization") String jwt, @RequestBody CommentDto commentDto){
+			@RequestHeader("Authorization") String jwt,
+			@ApiParam(value = "{\"boardNo\":\"게시판번호\", \"content\":\"내용\"}") @RequestBody CommentDto commentDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("댓글 작성");
 		String accessToken = jwt.replace("Bearer ", "");
@@ -159,7 +166,8 @@ public class BoardController {
 	@ApiOperation(value = "대댓글 작성")
 	@PostMapping("/writeReply")
 	public ResponseEntity<Map<String, Object>> writeReply(
-			@RequestHeader("Authorization") String jwt, @RequestBody ReplyCommentDto replyDto){
+			@RequestHeader("Authorization") String jwt,
+			@ApiParam(value = "{\"boardNo\":\"게시판번호\", \"commentNo\":\"대댓글이 달릴 댓글 번호\", \"content\":\"내용\"}")@RequestBody ReplyCommentDto replyDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("대댓글 작성");
 		String accessToken = jwt.replace("Bearer ", "");
@@ -180,8 +188,9 @@ public class BoardController {
 	@ApiOperation(value = "게시글 수정")
 	@PutMapping("/modifyBoard")
 	public ResponseEntity<Map<String, Object>> modifyBoard(
-			@RequestHeader("Authorization") String jwt, @RequestPart(value="boardDto") BoardDto boardDto,
-			@RequestPart(value = "files", required = false) MultipartFile[] files){
+			@RequestHeader("Authorization") String jwt,
+			@ApiParam(value = "{\"boardNo\":\"게시판번호\", \"title\":\"새로운 제목\", \"content\":\"새로운 내용\", \"writerId\":\"해당 글을 작성했던 유저의 아이디\"}") @RequestPart(value="boardDto") BoardDto boardDto,
+			@ApiParam(value = "files, 배열 형태") @RequestPart(value = "files", required = false) MultipartFile[] files){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		String accessToken = jwt.replace("Bearer ", "");
 		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
@@ -224,7 +233,8 @@ public class BoardController {
 	@ApiOperation(value = "댓글 수정")
 	@PutMapping("/modifyComment")
 	public ResponseEntity<Map<String, Object>> modifyComment(
-			@RequestHeader("Authorization") String jwt, @RequestBody CommentDto commentDto){
+			@RequestHeader("Authorization") String jwt,
+			@ApiParam(value = "{\"commentNo\":\"댓글 번호\", \"content\":\"댓글의 내용\", \"writerId\":\"원본 댓글의 작성자 아이디\"}") @RequestBody CommentDto commentDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 
 		logger.info("댓글 수정 작성");
@@ -256,7 +266,8 @@ public class BoardController {
 	@ApiOperation(value = "대댓글 수정")
 	@PutMapping("/modifyReply")
 	public ResponseEntity<Map<String, Object>> modifyReply(
-			@RequestHeader("Authorization") String jwt, @RequestBody ReplyCommentDto replyDto){
+			@RequestHeader("Authorization") String jwt,
+			@ApiParam(value = "{\"replyNo\":\"대댓글 번호\", \"content\":\"대댓글의 내용\", \"writerId\":\"원본 대댓글의 작성자 아이디\"}") @RequestBody ReplyCommentDto replyDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("대댓글 수정 작성");
 		String accessToken = jwt.replace("Bearer ", "");
@@ -286,7 +297,9 @@ public class BoardController {
 	@ApiOperation(value = "게시글 삭제")
 	@PutMapping("/deleteBoard")
 	public ResponseEntity<Map<String, Object>> deleteBoard(
-			@RequestHeader("Authorization") String jwt, @RequestParam String boardNo, @RequestParam String BoardWriterId){
+			@RequestHeader("Authorization") String jwt,
+			@ApiParam(value = "게시물 번호") @RequestParam String boardNo,
+			@ApiParam(value="게시물의 작성자 아이디") @RequestParam String BoardWriterId){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("게시글 삭제");
 		String accessToken = jwt.replace("Bearer ", "");
@@ -299,7 +312,7 @@ public class BoardController {
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);			
 		}
 		
-		// 게시글 수정
+		// 게시글 삭제
 		try {
 			boardService.deleteBoard(boardNo);
 			resultMap.put("message", SUCCESS);
