@@ -68,7 +68,7 @@ public class ReviewServiceImpl implements ReviewService {
                 String fileName = multipartFile.getOriginalFilename();
                 String path = savePath + separatorChar + uuid;
 
-//                log.info("이미지 저장 경로: {}", path);
+                log.info("이미지 저장 경로: {}", path);
 
                 new File(path).mkdir();
                 // 이미지 저장
@@ -77,11 +77,12 @@ public class ReviewServiceImpl implements ReviewService {
                 try {
                     multipartFile.transferTo(file);
                 } catch (IOException e) {
+                    log.error("사진 저장 실패");
                     log.error(e.getMessage());
                 }
 
                 Path savePath = Path.builder()
-                        .imagePath(uuid.concat("\\").concat(fileName))
+                        .imagePath(uuid.concat("/").concat(fileName))
                         .reviewId(review.getId())
                         .build();
 

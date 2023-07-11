@@ -11,6 +11,7 @@ oauth:
 # ============================= #
 # ====== Local Database ======= #
 # ============================= #
+# TODO: URL, username, ddl-auto 확인하기
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver

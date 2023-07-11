@@ -8,6 +8,7 @@ import com.mygumi.insider.dto.ReviewDTO;
 import com.mygumi.insider.mapper.StoreMapper;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
+
+@Slf4j
 @RestController
 @RequestMapping("/review")
 @RequiredArgsConstructor
@@ -28,18 +31,17 @@ public class ReviewController {
 
     private final StoreMapper storeMapper;
 
-    @GetMapping()
-    public DetailStoreDTO getDetailStoreInfo() {
-        DetailStoreDTO result = storeMapper.getDetailStoreInfo();
-        List<DetailReviewDTO> reviews = result.getReviews();
-        for (DetailReviewDTO review : reviews) {
-            System.out.println("review = " + review);
-            List<DetailImagePath> imagePath = review.getImagePath();
-            System.out.println("imagePath = " + imagePath);
-        }
-//        System.out.println("result = " + result);
+    @GetMapping("/{storeId}")
+    public DetailStoreDTO getDetailStoreInfo(@PathVariable Long storeId) {
 
-        return storeMapper.getDetailStoreInfo();
+        DetailStoreDTO result = storeMapper.getDetailStoreInfo(storeId);
+
+        if (result.getReviews().get(0).getReview_id() == null) {
+            log.info("{}에 리뷰가 아직 없습니다!", result.getStore_name());
+            result.setReviews(null);
+        }
+
+        return result;
     }
 
     @ApiOperation(value = "리뷰 남기기", notes = "POST 방식으로 리뷰 남기기")
