@@ -16,6 +16,7 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "review_id")
     private Long id;
 
     private String userId;

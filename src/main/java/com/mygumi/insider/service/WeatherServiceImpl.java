@@ -52,11 +52,6 @@ public class WeatherServiceImpl implements WeatherService {
 				hour = 23;
 			}
 		}
-		hour = hour + 9;
-		if (hour > 23) {
-			Date = nowDate.plusDays(1).format(formatDay);
-			hour = hour - 24;
-		}
 		String hourString = Integer.toString(hour);
 		if (hourString.length() == 1)
 			hourString = "0" + hourString;

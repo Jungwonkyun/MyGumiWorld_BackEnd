@@ -56,6 +56,8 @@ public class StoreServiceImpl implements StoreService {
         storeWithReviewDTO.setReviews(new ArrayList<>());
 
         List<Review> findReviews = findStoreWithReviews.getReviews();
+        System.out.println("==========================");
+        System.out.println("findReviews.size() = " + findReviews.size());
         for (Review findReview : findReviews) {
 //            System.out.println(findReview);
 //            System.out.println(storeWithReviewDTO.getReviews());
