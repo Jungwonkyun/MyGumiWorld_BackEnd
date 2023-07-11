@@ -1,7 +1,11 @@
 package com.mygumi.insider.controller;
 
-import com.mygumi.insider.service.ReviewService;
+import com.mygumi.insider.Service.ReviewService;
+import com.mygumi.insider.dto.DetailImagePath;
+import com.mygumi.insider.dto.DetailReviewDTO;
+import com.mygumi.insider.dto.DetailStoreDTO;
 import com.mygumi.insider.dto.ReviewDTO;
+import com.mygumi.insider.mapper.StoreMapper;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
@@ -21,6 +25,22 @@ import java.util.List;
 public class ReviewController {
 
     private final ReviewService reviewService;
+
+    private final StoreMapper storeMapper;
+
+    @GetMapping()
+    public DetailStoreDTO getDetailStoreInfo() {
+        DetailStoreDTO result = storeMapper.getDetailStoreInfo();
+        List<DetailReviewDTO> reviews = result.getReviews();
+        for (DetailReviewDTO review : reviews) {
+            System.out.println("review = " + review);
+            List<DetailImagePath> imagePath = review.getImagePath();
+            System.out.println("imagePath = " + imagePath);
+        }
+//        System.out.println("result = " + result);
+
+        return storeMapper.getDetailStoreInfo();
+    }
 
     @ApiOperation(value = "리뷰 남기기", notes = "POST 방식으로 리뷰 남기기")
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)

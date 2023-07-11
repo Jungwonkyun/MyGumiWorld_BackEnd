@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mygumi.insider.mapper.StoreMapper">
+
+    <resultMap id="detailStoreDTOResultMap" type="detailStoreDTO">
+        <result column="store_id" property="store_id" />
+        <result column="address" property="address"/>
+        <result column="category" property="category" />
+        <result column="lat" property="lat" />
+        <result column="lng" property="lng" />
+        <result column="store_name" property="store_name" />
+        <collection property="reviews" resultMap="detailReviewDTOResultMap" />
+    </resultMap>
+
+    <resultMap id="detailReviewDTOResultMap" type="detailReviewDTO">
+        <result column="review_id" property="review_id" />
+        <result column="comment" property="comment"/>
+        <result column="user_id" property="user_id" />
+        <collection property="imagePath" resultMap="detailImagePathResultMap" />
+    </resultMap>
+
+    <resultMap id="detailImagePathResultMap" type="detailImagePath">
+        <result column="imagepath" property="path" />
+    </resultMap>
+
+    <select id="getDetailStoreInfo" resultMap="detailStoreDTOResultMap">
+        SELECT s.*, r.*, coalesce(p.image_path, 'none') AS imagepath
+        FROM store s
+                 LEFT JOIN review r ON s.store_id  = r.store_id
+                 LEFT JOIN "path" p ON r.review_id = p.review_id
+        WHERE s.store_id = 1;
+    </select>
+
+</mapper>

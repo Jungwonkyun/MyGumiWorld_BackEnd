@@ -1,8 +1,10 @@
 package com.mygumi.insider.service;
 
+import com.mygumi.insider.domain.Path;
 import com.mygumi.insider.domain.Review;
 import com.mygumi.insider.domain.Store;
 import com.mygumi.insider.dto.ReviewDTO;
+import com.mygumi.insider.repository.PathRepository;
 import com.mygumi.insider.repository.ReviewRepository;
 import com.mygumi.insider.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
@@ -32,6 +34,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     private final StoreRepository storeRepository;
     private final ReviewRepository reviewRepository;
+    private final PathRepository pathRepository;
 
     @Override
     @Transactional
@@ -41,6 +44,7 @@ public class ReviewServiceImpl implements ReviewService {
         Store findStore = null;
 
         if (findStoreById.isEmpty()) {
+            log.error("가게 정보 없음");
             return;
         }
 
@@ -64,7 +68,7 @@ public class ReviewServiceImpl implements ReviewService {
                 String fileName = multipartFile.getOriginalFilename();
                 String path = savePath + separatorChar + uuid;
 
-                log.info("이미지 저장 경로: {}", path);
+//                log.info("이미지 저장 경로: {}", path);
 
                 new File(path).mkdir();
                 // 이미지 저장
@@ -75,9 +79,14 @@ public class ReviewServiceImpl implements ReviewService {
                 } catch (IOException e) {
                     log.error(e.getMessage());
                 }
+
+                Path savePath = Path.builder()
+                        .imagePath(uuid.concat("\\").concat(fileName))
+                        .reviewId(review.getId())
+                        .build();
+
+                pathRepository.save(savePath);
             }
         }
-
-
     }
 }
