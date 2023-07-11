@@ -186,9 +186,10 @@
 					CONCAT(HOUR(TIMEDIFF(NOW(), board.createDate)), '시간 전')
 				ELSE DATE_FORMAT(board.createDate, '%Y-%m-%d')
 			END AS createDate
-		FROM comment, reply
-		LEFT JOIN board USING (boardNo)
-		WHERE board.status = 1 AND board.writerId = #{id} AND reply.status = 1 AND comment.status = 1;
+		FROM comment
+		LEFT JOIN reply USING (commentNo)
+		LEFT JOIN board ON board.boardNo = comment.boardNo
+		WHERE (board.status = 1 AND comment.writerId = #{id}) OR (reply.writerId = #{id} AND reply.status = 1);
 	</select>
 
 	<!-- 내가 좋아요 한 글 목록-->

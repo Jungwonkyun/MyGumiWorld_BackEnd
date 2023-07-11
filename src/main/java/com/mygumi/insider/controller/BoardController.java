@@ -38,6 +38,8 @@ public class BoardController {
 	private final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
+	private static final String URL1 = "https://proxy.goorm.io/service/64a522416321182637a86990_d3EDtUkpmSQtVTvRKp4.run.goorm.io/9080/file/load/";
+	private static final String URL2 = "path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRmQ0YWE2ZThjLWEwZTAtNGRlNi04YzhjLTZiNjQzOTNiODE2YS5wbmc=&docker_id=d3EDtUkpmSQtVTvRKp4&secure_session_id=tSqBga4uiZ7LH5w3yaI1VsAsZbXVep6i";
 
 	@Autowired
 	private BoardService boardService;
@@ -46,7 +48,7 @@ public class BoardController {
 
 	@ApiOperation(value = "전체 게시판 반환(목록 형태)",
 			notes = "boardList 배열 내에 각 게시물의 정보를 담아 반환." +
-					"반환되는 정보 : boardNo, title, content(50자만 반환), hit, createDate, folder, originName, saveName")
+					"반환되는 정보 : boardNo, title, content(50자만 반환), hit, createDate, folder(해당 게시물의 사진 url), originName, saveName")
 	@GetMapping("/list")
 	public ResponseEntity<Map<String, Object>> getBoards(){
 		logger.info("BoardList 모두 반환");
@@ -65,7 +67,7 @@ public class BoardController {
 	}
 
 	@ApiOperation(value = "게시물 상세보기",
-			notes="boardDetail : 게시물의 상세 내용/맵 형식, comments : 댓글과 대댓글이 이중 배열 형식으로 들어있음.")
+			notes="boardDetail : 게시물의 상세 내용/맵 형식. folder : 해당 게시물 내 사진의 url 주소, comments : 댓글과 대댓글이 이중 배열 형식으로 들어있음.")
 	@GetMapping("/{boardNo}")
 	public ResponseEntity<Map<String, Object>> getBoard(
 			@ApiParam(value = "해당 유저의 JWT 토큰") @RequestHeader("Authorization") String jwt,
@@ -122,14 +124,11 @@ public class BoardController {
 				String fileSavePath = "/src/main/resources/static/files";
 				String originName = file.getOriginalFilename();
 				String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
-				boardDto.setFolder(projectPath+fileSavePath);
+				boardDto.setFolder(URL1 + saveName + URL2);
 				boardDto.setOriginName(originName);
 				boardDto.setSaveName(saveName);
 				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
 				file.transferTo(new File(projectPath+fileSavePath, saveName));
-
-				Resource resource = new UrlResource("file:" + projectPath+fileSavePath + saveName);
-				System.out.println(resource);
 			}
 			boardService.writeBoard(boardDto);
 			resultMap.put("message", SUCCESS);
@@ -212,7 +211,7 @@ public class BoardController {
 				String fileSavePath = "/src/main/resources/static/files";
 				String originName = file.getOriginalFilename();
 				String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
-				boardDto.setFolder(projectPath+fileSavePath);
+				boardDto.setFolder(URL1+saveName+URL2);
 				boardDto.setOriginName(originName);
 				boardDto.setSaveName(saveName);
 				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
