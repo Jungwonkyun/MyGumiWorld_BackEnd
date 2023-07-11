@@ -44,4 +44,6 @@ public interface BoardService {
 	List<BoardDto> getMyCommentBoards(String id) throws Exception;
 
 	List<BoardDto> getMyLikeBoards(String id) throws Exception;
+
+	Report report(Report reportDto)throws Exception;
 }
