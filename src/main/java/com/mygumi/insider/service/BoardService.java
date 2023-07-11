@@ -5,6 +5,7 @@ import java.util.List;
 import com.mygumi.insider.dto.BoardDto;
 import com.mygumi.insider.dto.CommentDto;
 import com.mygumi.insider.dto.ReplyCommentDto;
+import com.mygumi.insider.dto.Report;
 
 public interface BoardService {
 
@@ -31,5 +32,7 @@ public interface BoardService {
 	void deleteComment(String commentNo) throws Exception;
 
 	void deleteReply(String replyNo) throws Exception;
+
+	Report report(Report reportDto) throws Exception;
 
 }

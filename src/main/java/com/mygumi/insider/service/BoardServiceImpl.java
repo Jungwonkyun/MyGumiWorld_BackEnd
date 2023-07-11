@@ -4,13 +4,12 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import com.mygumi.insider.dto.*;
+import com.mygumi.insider.repository.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.mygumi.insider.mapper.BoardMapper;
-import com.mygumi.insider.dto.BoardDto;
-import com.mygumi.insider.dto.CommentDto;
-import com.mygumi.insider.dto.ReplyCommentDto;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -18,8 +17,11 @@ public class BoardServiceImpl implements BoardService {
     @Autowired
     private BoardMapper boardMapper;
 
+    @Autowired
+    ReportRepository reportRepository;
+
     @Override
-    public List<BoardDto> getBoards() throws Exception{
+    public List<BoardDto> getBoards() throws Exception {
         return boardMapper.getBoards();
     }
 
@@ -38,14 +40,13 @@ public class BoardServiceImpl implements BoardService {
         int idx = 0, size = replys.size();
         String replyIdx;
         // 대댓글을 댓글 안에 하나씩 넣기
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             replyIdx = replys.get(i).getCommentNo();
-            while(true) {
-                if(comments.get(idx).getCommentNo().equals(replyIdx)) {
+            while (true) {
+                if (comments.get(idx).getCommentNo().equals(replyIdx)) {
                     comments.get(idx).addReply(replys.get(i));
                     break;
-                }
-                else
+                } else
                     idx++;
             }
         }
@@ -55,7 +56,7 @@ public class BoardServiceImpl implements BoardService {
     @Override
     @Transactional
     public void writeBoard(BoardDto boardDto) throws Exception {
-        if(boardDto.getTitle() == null || boardDto.getContent() == null)
+        if (boardDto.getTitle() == null || boardDto.getContent() == null)
             throw new Exception();
         boardMapper.writeBoard(boardDto);
     }
@@ -99,5 +100,19 @@ public class BoardServiceImpl implements BoardService {
     public void deleteReply(String replyNo) throws Exception {
         boardMapper.deleteReply(replyNo);
     }
-}
 
+    @Override
+    public Report report(Report reported) throws Exception {
+        Report report = Report.builder()
+                .id(reported.getId())
+                .reportedId(reported.getReportedId())
+                .report(reported.getReport())
+                .boardNo(reported.getBoardNo())
+                .build();
+
+        reportRepository.save(report);
+
+        return report;
+    }
+
+}
