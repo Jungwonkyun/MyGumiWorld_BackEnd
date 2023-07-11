@@ -1,6 +1,6 @@
 package com.mygumi.insider.controller;
 
-import com.mygumi.insider.Service.StoreService;
+import com.mygumi.insider.service.StoreService;
 import com.mygumi.insider.dto.StoreDTO;
 import com.mygumi.insider.dto.StoreWithReviewDTO;
 import lombok.RequiredArgsConstructor;

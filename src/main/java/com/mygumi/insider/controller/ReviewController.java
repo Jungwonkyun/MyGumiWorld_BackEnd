@@ -1,6 +1,6 @@
 package com.mygumi.insider.controller;
 
-import com.mygumi.insider.Service.ReviewService;
+import com.mygumi.insider.service.ReviewService;
 import com.mygumi.insider.dto.DetailImagePath;
 import com.mygumi.insider.dto.DetailReviewDTO;
 import com.mygumi.insider.dto.DetailStoreDTO;
