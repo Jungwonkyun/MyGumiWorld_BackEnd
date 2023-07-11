@@ -3,14 +3,16 @@ package com.mygumi.insider.dto;
 import java.util.ArrayList;
 
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-@ApiModel(value = "댓글 Dto, status 1 일시 존재, 0 일시 삭제")
+@ApiModel(value = "게시물의 댓글 Dto")
 public class CommentDto {
-	
+
+	@ApiModelProperty(value = "")
 	private String commentNo;
 	private String content;
 	private String boardNo;

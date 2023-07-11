@@ -26,15 +26,14 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public BoardDto getBoardDetail(int boardNo) throws Exception {
+    public BoardDto getBoardDetail(String boardNo) throws Exception {
         boardMapper.updateHit(boardNo);
         BoardDto boardDto = boardMapper.getBoardDetail(boardNo);
-        boardDto.setLikesNum(boardMapper.getLikesNum(boardNo));
         return boardDto;
     }
 
     @Override
-    public List<CommentDto> getBoardcomments(int boardNo) throws Exception {
+    public List<CommentDto> getBoardcomments(String boardNo) throws Exception {
         List<CommentDto> comments = boardMapper.getComments(boardNo);
         List<ReplyCommentDto> replys = boardMapper.getReplys(boardNo);
         int idx = 0, size = replys.size();
@@ -51,6 +50,11 @@ public class BoardServiceImpl implements BoardService {
             }
         }
         return comments;
+    }
+
+    @Override
+    public long getBoardLikeStatus(String boardNo, String id) throws Exception {
+        return boardMapper.getLikeStatus(boardNo, id);
     }
 
     @Override
@@ -102,6 +106,31 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public void likeBoard(String boardNo, String id) throws Exception {
+        boardMapper.likeBoard(boardNo, id);
+    }
+
+    @Override
+    public void dislikeBoard(String boardNo, String id) throws Exception {
+        boardMapper.dislikeBoard(boardNo, id);
+    }
+
+    @Override
+    public List<BoardDto> getMyBoards(String id) throws Exception {
+        return boardMapper.getMyBoards(id);
+    }
+
+    @Override
+    public List<BoardDto> getMyCommentBoards(String id) throws Exception {
+        return boardMapper.getMyCommentBoards(id);
+    }
+
+    @Override
+    public List<BoardDto> getMyLikeBoards(String id) throws Exception {
+        return boardMapper.getMyLikeBoards(id);
+    }
+
+    @Override
     public Report report(Report reported) throws Exception {
         Report report = Report.builder()
                 .id(reported.getId())
@@ -114,5 +143,4 @@ public class BoardServiceImpl implements BoardService {
 
         return report;
     }
-
 }

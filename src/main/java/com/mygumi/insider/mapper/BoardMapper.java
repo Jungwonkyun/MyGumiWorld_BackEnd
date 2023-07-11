@@ -14,11 +14,11 @@ public interface BoardMapper {
 
 	public List<BoardDto> getBoards() throws SQLException;
 
-	public BoardDto getBoardDetail(int boardNo) throws SQLException;
+	public BoardDto getBoardDetail(String boardNo) throws SQLException;
 
-	public List<CommentDto> getComments(int boardNo) throws SQLException;
+	public List<CommentDto> getComments(String boardNo) throws SQLException;
 
-	public List<ReplyCommentDto> getReplys(int boardNo) throws SQLException;
+	public List<ReplyCommentDto> getReplys(String boardNo) throws SQLException;
 
 	public void writeBoard(BoardDto boardDto) throws SQLException;
 
@@ -38,10 +38,17 @@ public interface BoardMapper {
 
 	public void deleteReply(String replyNo) throws SQLException;
 
-	public void updateHit(int boardNo) throws SQLException;
+	public void updateHit(String boardNo) throws SQLException;
 	
-	public int getLikesNum(int boardNo) throws SQLException;
-	
-	public int getLikeStatus(int boardNo, int userId) throws SQLException;
+	public long getLikeStatus(String boardNo, String userId) throws SQLException;
 
+	void likeBoard(String boardNo, String id) throws SQLException;
+
+	void dislikeBoard(String boardNo, String id) throws SQLException;
+
+	List<BoardDto> getMyBoards(String id) throws SQLException;
+
+	List<BoardDto> getMyCommentBoards(String id) throws SQLException;
+
+	List<BoardDto> getMyLikeBoards(String id) throws SQLException;
 }
