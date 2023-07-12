@@ -68,4 +68,34 @@ public class StoreServiceImpl implements StoreService {
 
         return storeWithReviewDTO;
     }
+
+    @Override
+    public StoreWithReviewDTO getStoreWithReviewsByStoreName(String storeName) {
+
+        Store findStoreWithReviews = storeRepository.getStoreWithReviewsByStoreName(storeName);
+
+        StoreWithReviewDTO storeWithReviewDTO = StoreWithReviewDTO.builder()
+                .id(findStoreWithReviews.getId())
+                .storeName(findStoreWithReviews.getStoreName())
+                .address(findStoreWithReviews.getAddress())
+                .lng(findStoreWithReviews.getLng())
+                .lat(findStoreWithReviews.getLat())
+                .category(findStoreWithReviews.getCategory())
+                .build();
+
+        storeWithReviewDTO.setReviews(new ArrayList<>());
+
+        List<Review> findReviews = findStoreWithReviews.getReviews();
+        System.out.println("==========================");
+        System.out.println("findReviews.size() = " + findReviews.size());
+        for (Review findReview : findReviews) {
+//            System.out.println(findReview);
+//            System.out.println(storeWithReviewDTO.getReviews());
+            storeWithReviewDTO.getReviews().add(findReview);
+        }
+
+        storeWithReviewDTO.setAvgStar(storeRepository.getAverageStar(findStoreWithReviews.getId()));
+
+        return storeWithReviewDTO;
+    }
 }

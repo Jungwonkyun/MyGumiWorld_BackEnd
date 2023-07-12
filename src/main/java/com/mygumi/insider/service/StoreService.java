@@ -10,4 +10,6 @@ public interface StoreService {
     List<StoreDTO> getAllStore();
 
     StoreWithReviewDTO getStoreWithReviews(Long storeId);
+
+    StoreWithReviewDTO getStoreWithReviewsByStoreName(String storeName);
 }

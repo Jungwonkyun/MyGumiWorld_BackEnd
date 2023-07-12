@@ -7,4 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface StoreMapper {
 
     DetailStoreDTO getDetailStoreInfo(Long storeId);
+
+    DetailStoreDTO getDetailStoreInfoByStoreName(String storeName);
 }

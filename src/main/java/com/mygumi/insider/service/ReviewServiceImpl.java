@@ -20,6 +20,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static java.io.File.separatorChar;
+import static java.util.Objects.isNull;
 
 @Slf4j
 @Service
@@ -59,7 +60,7 @@ public class ReviewServiceImpl implements ReviewService {
 
         reviewRepository.save(review);
 
-        if (!files.isEmpty()) {
+        if (!isNull(files) && !files.get(0).isEmpty()) {
 
             String uuid = UUID.randomUUID().toString();
 
