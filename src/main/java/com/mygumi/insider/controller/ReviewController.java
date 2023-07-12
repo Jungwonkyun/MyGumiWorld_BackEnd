@@ -36,7 +36,7 @@ public class ReviewController {
 
         DetailStoreDTO result = storeMapper.getDetailStoreInfo(storeId);
 
-        if (result.getReviews().get(0).getReview_id() == null) {
+        if (result.getReviews() == null) {
             log.info("{}에 리뷰가 아직 없습니다!", result.getStore_name());
             result.setReviews(null);
         }

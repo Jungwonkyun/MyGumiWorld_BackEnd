@@ -13,6 +13,9 @@ public interface StoreRepository extends CrudRepository<Store, Long> {
     @Query("select distinct s from Store s join fetch s.reviews where s.id = :storeId")
     Store getStoreWithReviews(@Param("storeId") Long storeId);
 
+    @Query("select distinct s from Store s join fetch s.reviews where s.storeName = :storeName")
+    Store getStoreWithReviewsByStoreName(@Param("storeName") String storeName);
+
     @Query(value = "SELECT avg(star) FROM review r where r.store_id = :storeId", nativeQuery = true)
     Integer getAverageStar(@Param("storeId") Long storeId);
 
