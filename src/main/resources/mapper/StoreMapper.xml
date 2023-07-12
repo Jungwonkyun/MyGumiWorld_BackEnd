@@ -26,11 +26,19 @@
     </resultMap>
 
     <select id="getDetailStoreInfo" parameterType="Long" resultMap="detailStoreDTOResultMap">
-        SELECT s.*, r.*, ifnull(p.image_path, 'none') AS imagepath
-        FROM `store` s
-                 LEFT JOIN `review` r ON s.store_id  = r.store_id
-                 LEFT JOIN `path` p ON r.review_id = p.review_id
-        WHERE s.store_id = #{storeId};
+        SELECT s.*, r.*, nullif(p.image_path, '이미지 없음') AS imagepath
+        FROM store s
+                 LEFT JOIN review r ON s.id  = r.store_id
+                 LEFT JOIN path p ON r.review_id = p.review_id
+        WHERE s.id = #{storeId};
+    </select>
+
+    <select id="getDetailStoreInfoByStoreName" parameterType="String" resultMap="detailStoreDTOResultMap">
+        SELECT s.*, r.*, nullif(p.image_path, '이미지 없음') AS imagepath
+        FROM store s
+                 LEFT JOIN review r ON s.id  = r.store_id
+                 LEFT JOIN path p ON r.review_id = p.review_id
+        WHERE s.store_name = #{storeName};
     </select>
 
 </mapper>
