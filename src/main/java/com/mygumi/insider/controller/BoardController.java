@@ -7,15 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import com.mygumi.insider.domain.oauth.AuthTokensGenerator;
-import com.mygumi.insider.dto.Report;
-import io.swagger.annotations.ApiParam;
-import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,25 +25,18 @@ import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin(origins = { "*" }, maxAge=600)
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/board")
-@Api(value="Board 컨트롤러 API", description = "기본 반환값은 Map 형태, 'message'='success'일 시 요청 성공, 'message'='fail' 일 시 요청 실패")
+@Api(value="Board 컨트롤러 API")
 public class BoardController {
 
 	private final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
-	private static final String URL1 = "https://proxy.goorm.io/service/64a432721173303c40366663_d0UKmPGX2nZ0fC2MbAA.run.goorm.io/9080/file/load/";
-	private static final String URL2 = "?path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRjAzNWUzMzA1LWUxNjAtNDdjNC1iNGE1LWNkNDA4ZTJjYjgxNC5wbmc=&docker_id=d0UKmPGX2nZ0fC2MbAA&secure_session_id=3L2NurdkBSxnmLIXROYJhnQTCWZPFYTN";
-
 	@Autowired
 	private BoardService boardService;
-
-	private final AuthTokensGenerator authTokensGenerator;
-
-	@ApiOperation(value = "전체 게시판 반환(목록 형태)",
-			notes = "boardList 배열 내에 각 게시물의 정보를 담아 반환." +
-					"반환되는 정보 : boardNo, title, content(50자만 반환), hit, createDate, folder(해당 게시물의 사진 url), originName, saveName")
+	
+	// 닉네임 join 필요
+	@ApiOperation(value = "전체 게시판 반환(목록 형태)")
 	@GetMapping("/list")
 	public ResponseEntity<Map<String, Object>> getBoards(){
 		logger.info("BoardList 모두 반환");
@@ -66,34 +53,19 @@ public class BoardController {
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
 		}
 	}
-
-	@ApiOperation(value = "게시물 상세보기",
-			notes="boardDetail : 게시물의 상세 내용/맵 형식. folder : 해당 게시물 내 사진의 url 주소, comments : 댓글과 대댓글이 이중 배열 형식으로 들어있음.")
+	
+	// 닉네임 join 필요
+	@ApiOperation(value = "게시물 상세보기 및 댓글+대댓글 반환")
 	@GetMapping("/{boardNo}")
-	public ResponseEntity<Map<String, Object>> getBoard(
-			@ApiParam(value = "해당 유저의 JWT 토큰") @RequestHeader("Authorization") String jwt,
-			@ApiParam(value = "조회할 게시물 번호") @PathVariable("boardNo")String boardNo){
+	public ResponseEntity<Map<String, Object>> getBoard(@PathVariable("boardNo")int boardNo){
 		logger.info("게시글 {}번 반환", boardNo);
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
-			//게시글 내용 및 좋아요 수 반환
-			System.out.println(boardNo);
+			//게시글 내용 반환
 			BoardDto board = boardService.getBoardDetail(boardNo);
-
+			resultMap.put("boardDetail", board);
 			//댓글+답글 내용 반환
 			List<CommentDto> comments = boardService.getBoardcomments(boardNo);
-
-			//좋아요 여부 반환
-			long likeStatus = boardService.getBoardLikeStatus(boardNo, id);
-			if(likeStatus == 0){
-				board.setLikeStatus(0);
-			}else{
-				board.setLikeStatus(1);
-			}
-
-			resultMap.put("boardDetail", board);
 			resultMap.put("comments", comments);
 			resultMap.put("message", SUCCESS);
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
@@ -104,19 +76,19 @@ public class BoardController {
 		}
 	}
 	
-	@ApiOperation(value = "게시물 쓰기",
-			notes="한 게시물 당 사진은 하나만 저장, 1MB 이하만.\n" +
-					"웬만하면 포스트맨으로 테스트 부탁드립니다,, 포스트맨 설정은 카톡 부탁드려요\n")
+	@ApiOperation(value = "게시물 쓰기")
 	@PostMapping("/writeBoard")
 	public ResponseEntity<Map<String, Object>> writeBoard(
-			@RequestHeader("Authorization") String jwt,
-			@ApiParam(value = "{\"title\":\"제목\", \"content\":\"내용\"}") @RequestPart(value="boardDto") BoardDto boardDto,
-			@ApiParam(value = "files(배열 형태)") @RequestPart(value = "files", required = false) MultipartFile[] files){
+			@RequestPart(value="boardDto") BoardDto boardDto, @RequestPart(value = "files", required = false) MultipartFile[] files){
+//	@ApiOperation(value = "게시물 쓰기")
+//	@PostMapping("/writeBoard")
+//	public ResponseEntity<Map<String, Object>> writeBoard(@RequestBody Map<String,Object> boardInfo){
+//		
+//		MultipartFile file = (MultipartFile) boardInfo.get("fileInfo");
+//		BoardDto boardDto = (BoardDto) boardInfo.get("boardDtoInfo");
+		
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("게시물 작성");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-		boardDto.setWriterId(id);
 		logger.debug("게시물 내용 {}:", boardDto);
 		
 		try {
@@ -125,10 +97,10 @@ public class BoardController {
 				String fileSavePath = "/src/main/resources/static/files";
 				String originName = file.getOriginalFilename();
 				String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
-				boardDto.setFolder(URL1 + saveName + URL2);
+				boardDto.setFolder(projectPath+fileSavePath);
 				boardDto.setOriginName(originName);
 				boardDto.setSaveName(saveName);
-				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
+				logger.debug("파일 저장 : {}", projectPath);
 				file.transferTo(new File(projectPath+fileSavePath, saveName));
 			}
 			boardService.writeBoard(boardDto);
@@ -144,13 +116,15 @@ public class BoardController {
 	@ApiOperation(value = "댓글 작성")
 	@PostMapping("/writeComment")
 	public ResponseEntity<Map<String, Object>> writeComment(
-			@RequestHeader("Authorization") String jwt,
-			@ApiParam(value = "{\"boardNo\":\"게시판번호\", \"content\":\"내용\"}") @RequestBody CommentDto commentDto){
-		Map<String, Object> resultMap = new HashMap<String, Object>();
+			// @RequestParam String content, @RequestParam String boardNo, @RequestParam String writerId, @RequestParam String writerName){
+			@RequestBody CommentDto commentDto){
+			Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("댓글 작성");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-		commentDto.setWriterId(id);
+		// CommentDto commentDto = new CommentDto();
+		// commentDto.setContent(content);
+		// commentDto.setWriterId(writerId);
+		// commentDto.setWriterName(writerName);
+		// commentDto.setBoardNo(boardNo);
 		logger.debug("댓글 내용 {}:", commentDto);
 		try {
 			boardService.writeComment(commentDto);
@@ -166,13 +140,17 @@ public class BoardController {
 	@ApiOperation(value = "대댓글 작성")
 	@PostMapping("/writeReply")
 	public ResponseEntity<Map<String, Object>> writeReply(
-			@RequestHeader("Authorization") String jwt,
-			@ApiParam(value = "{\"boardNo\":\"게시판번호\", \"commentNo\":\"대댓글이 달릴 댓글 번호\", \"content\":\"내용\"}")@RequestBody ReplyCommentDto replyDto){
+		@RequestBody ReplyCommentDto replyDto){
+			// @RequestParam String content, @RequestParam String boardNo, @RequestParam String commentNo,
+			// @RequestParam String writerId, @RequestParam String writerName){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("대댓글 작성");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-		replyDto.setWriterId(id);
+		// ReplyCommentDto replyDto = new ReplyCommentDto();
+		// replyDto.setBoardNo(boardNo);
+		// replyDto.setCommentNo(commentNo);
+		// replyDto.setContent(content);
+		// replyDto.setWriterId(writerId);
+		// replyDto.setWriterName(writerName);
 		logger.debug("대댓글 내용 {}:", replyDto);
 		try {
 			boardService.writeReply(replyDto);
@@ -188,16 +166,19 @@ public class BoardController {
 	@ApiOperation(value = "게시글 수정")
 	@PutMapping("/modifyBoard")
 	public ResponseEntity<Map<String, Object>> modifyBoard(
-			@RequestHeader("Authorization") String jwt,
-			@ApiParam(value = "{\"boardNo\":\"게시판번호\", \"title\":\"새로운 제목\", \"content\":\"새로운 내용\", \"writerId\":\"해당 글을 작성했던 유저의 아이디\"}") @RequestPart(value="boardDto") BoardDto boardDto,
-			@ApiParam(value = "files, 배열 형태") @RequestPart(value = "files", required = false) MultipartFile[] files){
+			@RequestBody BoardDto boardDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
+		// jwt 받아서 수정
+		String writerId = null;
 		logger.info("게시글 수정 작성");
-
+		if(boardDto.getWriterId() == null || writerId == null) {
+			logger.info("실패 : null값 입력");
+			resultMap.put("message", FAIL);
+			resultMap.put("reason", "null value");
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
+		}
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!boardDto.getWriterId().equals(id)) {
+		if(!boardDto.getWriterId().equals(writerId)) {
 			logger.info("실패 : 다른 사람의 게시글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -206,18 +187,6 @@ public class BoardController {
 		
 		// 게시글 수정
 		try {
-			// 사진이 있을 시, 사진 수정
-			for(MultipartFile file : files) {
-				String projectPath = new File("").getAbsolutePath();
-				String fileSavePath = "/src/main/resources/static/files";
-				String originName = file.getOriginalFilename();
-				String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
-				boardDto.setFolder(URL1+saveName+URL2);
-				boardDto.setOriginName(originName);
-				boardDto.setSaveName(saveName);
-				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
-				file.transferTo(new File(projectPath+fileSavePath, saveName));
-			}
 			boardService.modifyBoard(boardDto);
 			resultMap.put("message", SUCCESS);
 			logger.info("성공");
@@ -233,16 +202,18 @@ public class BoardController {
 	@ApiOperation(value = "댓글 수정")
 	@PutMapping("/modifyComment")
 	public ResponseEntity<Map<String, Object>> modifyComment(
-			@RequestHeader("Authorization") String jwt,
-			@ApiParam(value = "{\"commentNo\":\"댓글 번호\", \"content\":\"댓글의 내용\", \"writerId\":\"원본 댓글의 작성자 아이디\"}") @RequestBody CommentDto commentDto){
+			@RequestBody CommentDto commentDto){
+		String writerId = "";
 		Map<String, Object> resultMap = new HashMap<String, Object>();
-
 		logger.info("댓글 수정 작성");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-
+		if(commentDto.getWriterId() == null || writerId == null) {
+			logger.info("실패 : null값 입력");
+			resultMap.put("message", FAIL);
+			resultMap.put("reason", "null value");
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
+		}
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!commentDto.getWriterId().equals(id)) {
+		if(!commentDto.getWriterId().equals(writerId)) {
 			logger.info("실패 : 다른 사람의 댓글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -266,14 +237,18 @@ public class BoardController {
 	@ApiOperation(value = "대댓글 수정")
 	@PutMapping("/modifyReply")
 	public ResponseEntity<Map<String, Object>> modifyReply(
-			@RequestHeader("Authorization") String jwt,
-			@ApiParam(value = "{\"replyNo\":\"대댓글 번호\", \"content\":\"대댓글의 내용\", \"writerId\":\"원본 대댓글의 작성자 아이디\"}") @RequestBody ReplyCommentDto replyDto){
+			@RequestBody ReplyCommentDto replyDto){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+		String writerId = "";
 		logger.info("대댓글 수정 작성");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
+		if(replyDto.getWriterId() == null || writerId == null) {
+			logger.info("실패 : null값 입력");
+			resultMap.put("message", FAIL);
+			resultMap.put("reason", "null value");
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
+		}
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!replyDto.getWriterId().equals(id)) {
+		if(!replyDto.getWriterId().equals(writerId)) {
 			logger.info("실패 : 다른 사람의 대댓글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -297,22 +272,25 @@ public class BoardController {
 	@ApiOperation(value = "게시글 삭제")
 	@PutMapping("/deleteBoard")
 	public ResponseEntity<Map<String, Object>> deleteBoard(
-			@RequestHeader("Authorization") String jwt,
-			@ApiParam(value = "게시물 번호") @RequestParam String boardNo,
-			@ApiParam(value="게시물의 작성자 아이디") @RequestParam String BoardWriterId){
+			@RequestParam String boardNo, @RequestParam String BoardWriterId){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+		String writerId = "";
 		logger.info("게시글 삭제");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
+		if(BoardWriterId == null || writerId == null) {
+			logger.info("실패 : null값 입력");
+			resultMap.put("message", FAIL);
+			resultMap.put("reason", "null value");
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
+		}
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!BoardWriterId.equals(id)) {
+		if(!BoardWriterId.equals(writerId)) {
 			logger.info("실패 : 다른 사람의 게시글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);			
 		}
 		
-		// 게시글 삭제
+		// 게시글 수정
 		try {
 			boardService.deleteBoard(boardNo);
 			resultMap.put("message", SUCCESS);
@@ -329,13 +307,18 @@ public class BoardController {
 	@ApiOperation(value = "댓글 삭제")
 	@PutMapping("/deleteComment")
 	public ResponseEntity<Map<String, Object>> deleteComment(
-			@RequestHeader("Authorization") String jwt, @RequestParam String commentNo, @RequestParam String commentWriterId){
+			@RequestParam String commentNo, @RequestParam String commentWriterId){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+		String writerId = "";
 		logger.info("댓글 삭제");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
+		if(commentWriterId == null || writerId == null) {
+			logger.info("실패 : null값 입력");
+			resultMap.put("message", FAIL);
+			resultMap.put("reason", "null value");
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
+		}
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!commentWriterId.equals(id)) {
+		if(!commentWriterId.equals(writerId)) {
 			logger.info("실패 : 다른 사람의 댓글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -356,16 +339,21 @@ public class BoardController {
 		}
 	}
 	
-	@ApiOperation(value = "대댓글 삭제")
+	@ApiOperation(value = "대댓글 수정")
 	@PutMapping("/deleteReply")
 	public ResponseEntity<Map<String, Object>> deleteReply(
-			@RequestHeader("Authorization") String jwt, @RequestParam String replyNo, @RequestParam String replyWriterId){
+			@RequestParam String replyNo, @RequestParam String replyWriterId){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+		String writerId = "";
 		logger.info("대댓글 삭제");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
+		if(replyWriterId == null || writerId == null) {
+			logger.info("실패 : null값 입력");
+			resultMap.put("message", FAIL);
+			resultMap.put("reason", "null value");
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);						
+		}
 		// 작성자가 아닌 사람이 수정하려 할 때
-		if(!replyWriterId.equals(id)) {
+		if(!replyWriterId.equals(writerId)) {
 			logger.info("실패 : 다른 사람의 대댓글에 접근");
 			resultMap.put("message", FAIL);
 			resultMap.put("reason", "Wrong Writer");
@@ -385,136 +373,6 @@ public class BoardController {
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);			
 		}
 	}
-
-	@ApiOperation(value = "좋아요 설정(좋아요)")
-	@PutMapping("/like")
-	public ResponseEntity<Map<String, Object>> likeBoard(
-			@RequestHeader("Authorization") String jwt, @RequestParam String boardNo){
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		logger.info("좋아요 설정");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-
-		// 좋아요 설정
-		try {
-			boardService.likeBoard(boardNo, id);
-			resultMap.put("message", SUCCESS);
-			logger.info("성공");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}catch(Exception e) {
-			e.printStackTrace();
-			resultMap.put("message", FAIL);
-			logger.info("실패");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}
-	}
-
-	@ApiOperation(value = "좋아요 삭제")
-	@DeleteMapping("/dislike")
-	public ResponseEntity<Map<String, Object>> dislikeBoard(
-			@RequestHeader("Authorization") String jwt, @RequestParam String boardNo){
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		logger.info("좋아요 해제");
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-
-		// 좋아요 해제
-		try {
-			boardService.dislikeBoard(boardNo, id);
-			resultMap.put("message", SUCCESS);
-			logger.info("성공");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}catch(Exception e) {
-			e.printStackTrace();
-			resultMap.put("message", FAIL);
-			logger.info("실패");
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}
-	}
-
-	@ApiOperation(value = "내가 쓴 글 목록 반환",
-			notes = "boardList 배열 내에 각 게시물의 정보를 담아 반환." +
-					"반환되는 정보 : boardNo, title, content(50자만 반환), hit, createDate, folder, originName, saveName")
-	@GetMapping("/list/myboards")
-	public ResponseEntity<Map<String, Object>> getMyBoards(
-			@RequestHeader("Authorization") String jwt){
-		logger.info("내가 쓴 글 목록 반환");
-		List<BoardDto> boardList;
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		try {
-			boardList = boardService.getMyBoards(id);
-			resultMap.put("boardList", boardList);
-			resultMap.put("message", SUCCESS);
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}catch(Exception e) {
-			e.printStackTrace();
-			resultMap.put("message", FAIL);
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}
-	}
-
-	@ApiOperation(value = "내가 쓴 댓글이 포함된 글 목록 반환",
-			notes = "boardList 배열 내에 각 게시물의 정보를 담아 반환." +
-					"반환되는 정보 : boardNo, title, content(50자만 반환), hit, createDate, folder, originName, saveName")
-	@GetMapping("/list/mycomments")
-	public ResponseEntity<Map<String, Object>> getMyCommentBoards(
-			@RequestHeader("Authorization") String jwt){
-		logger.info("내가 쓴 글 목록 반환");
-		List<BoardDto> boardList;
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		try {
-			boardList = boardService.getMyCommentBoards(id);
-			resultMap.put("boardList", boardList);
-			resultMap.put("message", SUCCESS);
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}catch(Exception e) {
-			e.printStackTrace();
-			resultMap.put("message", FAIL);
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}
-	}
-
-	@ApiOperation(value = "내가 좋아요 한 글 목록 반환",
-			notes = "boardList 배열 내에 각 게시물의 정보를 담아 반환." +
-					"반환되는 정보 : boardNo, title, content(50자만 반환), hit, createDate, folder, originName, saveName")
-	@GetMapping("/list/likes")
-	public ResponseEntity<Map<String, Object>> getMyLikeBoards(
-			@RequestHeader("Authorization") String jwt){
-		logger.info("내가 좋아요 한 글 목록 반환");
-		List<BoardDto> boardList;
-		String accessToken = jwt.replace("Bearer ", "");
-		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		try {
-			boardList = boardService.getMyLikeBoards(id);
-			resultMap.put("boardList", boardList);
-			resultMap.put("message", SUCCESS);
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}catch(Exception e) {
-			e.printStackTrace();
-			resultMap.put("message", FAIL);
-			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-		}
-	}
-
-	@PostMapping("/report")
-	public ResponseEntity<Map<String, Object>> report(@RequestBody Report report){
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		try {
-			Report newReport =  boardService.report(report);
-			resultMap.put("message", SUCCESS);
-			resultMap.put("report", newReport);
-			logger.info("성공");
-		}catch(Exception e) {
-			e.printStackTrace();
-			resultMap.put("message", FAIL);
-			logger.info("실패");
-
-		}
-		return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
-	}
+	
+	
 }
