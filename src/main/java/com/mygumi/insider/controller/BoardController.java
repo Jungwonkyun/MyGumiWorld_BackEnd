@@ -39,8 +39,8 @@ public class BoardController {
 	private final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
-	private static final String URL1 = "https://proxy.goorm.io/service/64a522416321182637a86990_d3EDtUkpmSQtVTvRKp4.run.goorm.io/9080/file/load/";
-	private static final String URL2 = "path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRmQ0YWE2ZThjLWEwZTAtNGRlNi04YzhjLTZiNjQzOTNiODE2YS5wbmc=&docker_id=d3EDtUkpmSQtVTvRKp4&secure_session_id=tSqBga4uiZ7LH5w3yaI1VsAsZbXVep6i";
+	private static final String URL1 = "https://proxy.goorm.io/service/64a432721173303c40366663_d0UKmPGX2nZ0fC2MbAA.run.goorm.io/9080/file/load/";
+	private static final String URL2 = "?path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRjAzNWUzMzA1LWUxNjAtNDdjNC1iNGE1LWNkNDA4ZTJjYjgxNC5wbmc=&docker_id=d0UKmPGX2nZ0fC2MbAA&secure_session_id=3L2NurdkBSxnmLIXROYJhnQTCWZPFYTN";
 
 	@Autowired
 	private BoardService boardService;
