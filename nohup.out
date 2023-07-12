@@ -1308,3 +1308,51 @@ Hibernate:
         store0_.store_name as store_na6_4_ 
     from
         store store0_
+Error: Unable to access jarfile /workspace/MyGumiWorld_Back
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.13)
+
+2023-07-12 13:20:19.827  INFO 2194746 --- [           main] com.mygumi.insider.InsiderApplication    : Starting InsiderApplication v0.0.1-SNAPSHOT using Java 11.0.14 on goorm with PID 2194746 (/workspace/MyGumiWorld_BackEnd/target/insider-0.0.1-SNAPSHOT.jar started by root in /workspace/MyGumiWorld_BackEnd)
+2023-07-12 13:20:19.836 DEBUG 2194746 --- [           main] com.mygumi.insider.InsiderApplication    : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-12 13:20:19.840  INFO 2194746 --- [           main] com.mygumi.insider.InsiderApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-07-12 13:20:23.288  INFO 2194746 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-12 13:20:23.524  INFO 2194746 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 218 ms. Found 6 JPA repository interfaces.
+2023-07-12 13:20:25.620  INFO 2194746 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-12 13:20:25.645  INFO 2194746 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-12 13:20:25.646  INFO 2194746 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-12 13:20:25.970  INFO 2194746 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-12 13:20:25.970  INFO 2194746 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5930 ms
+2023-07-12 13:20:26.584  INFO 2194746 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-12 13:20:26.747  INFO 2194746 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-07-12 13:20:27.348  INFO 2194746 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-12 13:20:27.594  INFO 2194746 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-12 13:20:28.238  INFO 2194746 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-12 13:20:28.313  INFO 2194746 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-12 13:20:30.785  INFO 2194746 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-12 13:20:30.835  INFO 2194746 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-12 13:20:34.793  WARN 2194746 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-12 13:20:36.148  INFO 2194746 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-12 13:20:37.838  INFO 2194746 --- [           main] com.mygumi.insider.InsiderApplication    : Started InsiderApplication in 19.685 seconds (JVM running for 21.035)
+2023-07-12 13:20:50.193  INFO 2194746 --- [nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [SL_C_23361dd035530_SID={"5f138ee7ab583867cc8cd897279e0b29a88d6a54":{"sessionId":"1Ahy9MDhcAvxpBGYPpaBK","visitorId":"FhoC-T7mjNWaO8uSPflt-"},"3bc1fab1a8e67fabe9b4d36429b01d29f8f79fb7":{"sessionId":"ChaiKKpkFPNb4w__RRS1J","visitorId":"Q_sYyw33M8RyTm3-jrH-B"}};] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-07-12 13:20:50.217  INFO 2194746 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-12 13:20:50.222  INFO 2194746 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-12 13:20:50.225  INFO 2194746 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-07-12 13:20:50.261  INFO 2194746 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-12 13:20:50.286  INFO 2194746 --- [nio-8080-exec-1] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230712
+2023-07-12 13:20:50.287  INFO 2194746 --- [nio-8080-exec-1] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2100
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230712","baseTime":"2100","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230712","baseTime":"2100","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230712","baseTime":"2100","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230712","baseTime":"2100","category":"T1H","nx":86,"ny":95,"obsrValue":"26"},{"baseDate":"20230712","baseTime":"2100","category":"UUU","nx":86,"ny":95,"obsrValue":"-0.5"},{"baseDate":"20230712","baseTime":"2100","category":"VEC","nx":86,"ny":95,"obsrValue":"29"},{"baseDate":"20230712","baseTime":"2100","category":"VVV","nx":86,"ny":95,"obsrValue":"-1"},{"baseDate":"20230712","baseTime":"2100","category":"WSD","nx":86,"ny":95,"obsrValue":"1.3"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230712","nx":86,"ny":95,"category":"PTY","baseTime":"2100"},{"obsrValue":"96","baseDate":"20230712","nx":86,"ny":95,"category":"REH","baseTime":"2100"},{"obsrValue":"0","baseDate":"20230712","nx":86,"ny":95,"category":"RN1","baseTime":"2100"},{"obsrValue":"26","baseDate":"20230712","nx":86,"ny":95,"category":"T1H","baseTime":"2100"},{"obsrValue":"-0.5","baseDate":"20230712","nx":86,"ny":95,"category":"UUU","baseTime":"2100"},{"obsrValue":"29","baseDate":"20230712","nx":86,"ny":95,"category":"VEC","baseTime":"2100"},{"obsrValue":"-1","baseDate":"20230712","nx":86,"ny":95,"category":"VVV","baseTime":"2100"},{"obsrValue":"1.3","baseDate":"20230712","nx":86,"ny":95,"category":"WSD","baseTime":"2100"}]
+2023-07-12 13:20:55.922  INFO 2194746 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-12 13:20:55.926  INFO 2194746 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230712
+2023-07-12 13:20:55.927  INFO 2194746 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2100
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230712","baseTime":"2100","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230712","baseTime":"2100","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230712","baseTime":"2100","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230712","baseTime":"2100","category":"T1H","nx":86,"ny":95,"obsrValue":"26"},{"baseDate":"20230712","baseTime":"2100","category":"UUU","nx":86,"ny":95,"obsrValue":"-0.5"},{"baseDate":"20230712","baseTime":"2100","category":"VEC","nx":86,"ny":95,"obsrValue":"29"},{"baseDate":"20230712","baseTime":"2100","category":"VVV","nx":86,"ny":95,"obsrValue":"-1"},{"baseDate":"20230712","baseTime":"2100","category":"WSD","nx":86,"ny":95,"obsrValue":"1.3"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230712","nx":86,"ny":95,"category":"PTY","baseTime":"2100"},{"obsrValue":"96","baseDate":"20230712","nx":86,"ny":95,"category":"REH","baseTime":"2100"},{"obsrValue":"0","baseDate":"20230712","nx":86,"ny":95,"category":"RN1","baseTime":"2100"},{"obsrValue":"26","baseDate":"20230712","nx":86,"ny":95,"category":"T1H","baseTime":"2100"},{"obsrValue":"-0.5","baseDate":"20230712","nx":86,"ny":95,"category":"UUU","baseTime":"2100"},{"obsrValue":"29","baseDate":"20230712","nx":86,"ny":95,"category":"VEC","baseTime":"2100"},{"obsrValue":"-1","baseDate":"20230712","nx":86,"ny":95,"category":"VVV","baseTime":"2100"},{"obsrValue":"1.3","baseDate":"20230712","nx":86,"ny":95,"category":"WSD","baseTime":"2100"}]
