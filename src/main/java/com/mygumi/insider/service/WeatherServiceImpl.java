@@ -47,7 +47,7 @@ public class WeatherServiceImpl implements WeatherService {
 		} else {
 			minString = "00";
 			hour = hour - 1;
-			if (hour == 0) {
+			if (hour == -1) {
 				Date = nowDate.minusDays(1).format(formatDay);
 				hour = 23;
 			}
