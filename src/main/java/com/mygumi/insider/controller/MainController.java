@@ -22,31 +22,6 @@ import java.net.URI;
 @Api(value = "카카오 로그인 & 로그아웃으로 리다이렉트만 관여하는 Controller")
 public class MainController {
 
-    @ApiOperation(value = "main 에러 나게")
-    @GetMapping("/main")
-    public ResponseEntity<?> oauthLogin() throws IOException {
-<<<<<<< HEAD
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(URI.create("https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=d17798d61b78b91a8abfca3e6f914fe5&redirect_uri=https://mygumiworld-backend-flkcc.run.goorm.io/api/auth/kakao&prompt=login"));
-        return new ResponseEntity<>(headers, HttpStatus.OK);
-    }
-
-    //카카오 계정 로그아웃 -> 로그인 되었을 때만 로그아웃 할 수 있도록 구현
-    @ApiOperation(value = "해당 URL로 들어오면 카카오 로그인 API가 제공하는 내 애플리케이션의 로그아웃 화면으로 redirect" ,
-            notes = "Authorization: Bearer $[JWT Token] 형식으로 Header에 달아준다")
-    @GetMapping("/logout")
-    public ResponseEntity<?> oauthLogout(@ApiParam("value = 로그인 된 유저의 JWT 토큰 값")  @RequestHeader("Authorization") String jwt) throws IOException {
-
-        String accessToken = jwt.replaceAll("Bearer ", "");
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(URI.create("https://kauth.kakao.com/oauth/logout?client_id=d17798d61b78b91a8abfca3e6f914fe5&logout_redirect_uri=https://mygumiworld-backend-flkcc.run.goorm.io/api/auth/kakao"));
-        return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
-=======
-        return new ResponseEntity<?>(HttpStatus.OK);
->>>>>>> ec6c122b46469ce40f7305d61d3396293341ca31
-    }
-    
     // //카카오 로그인 api
     // @ApiOperation(value = "해당 URL로 들어오면 카카오 로그인 API가 제공하는 내 애플리케이션의 로그인 화면으로 redirect" ,
     //               notes = "redirect될 URL은 고정 값")
