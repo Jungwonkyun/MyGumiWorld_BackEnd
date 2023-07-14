@@ -53,4 +53,10 @@ public interface BoardMapper {
 	List<BoardDto> getMyLikeBoards(String id) throws SQLException;
 
     List<BoardDto> getNewList() throws SQLException;
+
+    void deleteUserBoard(Long id) throws SQLException;
+
+	void deleteUserComment(Long id) throws SQLException;
+
+	void deleteUserReply(Long id) throws SQLException;
 }

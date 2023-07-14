@@ -41,7 +41,11 @@ public class MemberController {
     @DeleteMapping("/quitService")
     public ResponseEntity<?> quitService(@RequestHeader("Authorization") String jwt){
         Long id = authTokensGenerator.extractMemberId(jwt);
-        memberService.quitService(id);
+        try {
+            memberService.quitService(id);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         return ResponseEntity.ok(null);
     }
 }

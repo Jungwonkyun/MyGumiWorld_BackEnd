@@ -215,4 +215,25 @@
         ORDER BY createDate desc
 		LIMIT 3;
 	</select>
+
+	<!-- 회원탈퇴 시 게시물 삭제-->
+	<update id="deleteUserBoard" parameterType="Long">
+		UPDATE board
+		SET status = 0
+		WHERE writerId = #{id}
+	</update>
+
+	<!-- 회원탈퇴 시 댓글 삭제-->
+	<update id="deleteUserComment" parameterType="Long">
+		UPDATE comment
+		SET status = 0
+		WHERE writerId = #{id}
+	</update>
+
+	<!-- 회원탈퇴 시 대댓글 삭제-->
+	<update id="deleteUserReply" parameterType="Long">
+		UPDATE reply
+		SET status = 0
+		WHERE writerId = #{id}
+	</update>
 </mapper>
