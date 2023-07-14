@@ -76,11 +76,7 @@
 	
 	<!-- 게시글의 대댓글 출력 -->
 	<select id="getReplys" parameterType="String" resultType="replyCommentDto">
-<<<<<<< HEAD
-		SELECT replyNo, commentNo, content, nickname AS writerName, writerId, status,
-=======
 		SELECT replyNo, commentNo, content, nickname AS writerName, writerId, status, thumbnail_image_url AS writerImg,
->>>>>>> 8ddafa9dc6ec45cda175833d44c0ebdc9e4ca3f3
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -219,8 +215,6 @@
         ORDER BY createDate desc
 		LIMIT 3;
 	</select>
-<<<<<<< HEAD
-=======
 
 	<!-- 회원탈퇴 시 게시물 삭제-->
 	<update id="deleteUserBoard" parameterType="Long">
@@ -242,5 +236,4 @@
 		SET status = 0
 		WHERE writerId = #{id}
 	</update>
->>>>>>> 8ddafa9dc6ec45cda175833d44c0ebdc9e4ca3f3
 </mapper>
