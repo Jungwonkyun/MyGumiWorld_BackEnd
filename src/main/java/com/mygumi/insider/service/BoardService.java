@@ -46,4 +46,6 @@ public interface BoardService {
 	List<BoardDto> getMyLikeBoards(String id) throws Exception;
 
 	Report report(Report reportDto)throws Exception;
+
+	List<BoardDto> getNewList() throws Exception;
 }

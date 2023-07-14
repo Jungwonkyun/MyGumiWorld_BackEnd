@@ -76,7 +76,7 @@
 	
 	<!-- 게시글의 대댓글 출력 -->
 	<select id="getReplys" parameterType="String" resultType="replyCommentDto">
-		SELECT replyNo, commentNo, content, nickname AS writerName, writerId,
+		SELECT replyNo, commentNo, content, nickname AS writerName, writerId, status,
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -192,7 +192,7 @@
 		WHERE (board.status = 1 AND comment.writerId = #{id}) OR (reply.writerId = #{id} AND reply.status = 1);
 	</select>
 
-	<!-- 내가 좋아요 한 글 목록-->
+	<!-- 내가 좋아요 한 글 목록 -->
 	<select id="getMyLikeBoards" parameterType="String">
 		SELECT DISTINCT(likes.boardNo), title, hit, folder, saveName, originName, LEFT(content, 50) content,
 			CASE
@@ -205,5 +205,13 @@
 		FROM likes
 		LEFT JOIN board USING (boardNo)
 		WHERE status = 1 AND Id = #{id};
+	</select>
+
+	<!-- 최신글 3개 -->
+	<select id="getNewList" parameterType="String">
+		SELECT boardNo, title
+		FROM board
+		WHERE status = 1
+		LIMIT 3;
 	</select>
 </mapper>

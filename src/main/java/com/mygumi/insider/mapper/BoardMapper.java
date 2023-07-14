@@ -51,4 +51,6 @@ public interface BoardMapper {
 	List<BoardDto> getMyCommentBoards(String id) throws SQLException;
 
 	List<BoardDto> getMyLikeBoards(String id) throws SQLException;
+
+    List<BoardDto> getNewList() throws SQLException;
 }

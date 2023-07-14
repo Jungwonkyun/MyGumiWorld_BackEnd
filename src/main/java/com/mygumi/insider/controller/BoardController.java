@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import com.mygumi.insider.domain.oauth.AuthTokensGenerator;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,9 +24,6 @@ import com.mygumi.insider.dto.BoardDto;
 import com.mygumi.insider.dto.CommentDto;
 import com.mygumi.insider.dto.ReplyCommentDto;
 import com.mygumi.insider.service.BoardService;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 
 @CrossOrigin(origins = { "*" }, maxAge=600)
 @RestController
@@ -490,6 +487,26 @@ public class BoardController {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		try {
 			boardList = boardService.getMyLikeBoards(id);
+			resultMap.put("boardList", boardList);
+			resultMap.put("message", SUCCESS);
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
+		}catch(Exception e) {
+			e.printStackTrace();
+			resultMap.put("message", FAIL);
+			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);
+		}
+	}
+
+	@ApiOperation(value = "최근 게시물 목록 3개",
+			notes = "boardList 배열 내에 각 게시물의 정보를 담아 반환." +
+					"반환되는 정보 : boardNo, title")
+	@GetMapping("/list/new")
+	public ResponseEntity<Map<String, Object>> getNewList(){
+		logger.info("최신글 3개 반환");
+		List<BoardDto> boardList;
+		Map<String, Object> resultMap = new HashMap<String, Object>();
+		try {
+			boardList = boardService.getNewList();
 			resultMap.put("boardList", boardList);
 			resultMap.put("message", SUCCESS);
 			return new ResponseEntity<Map<String,Object>>(resultMap, HttpStatus.OK);

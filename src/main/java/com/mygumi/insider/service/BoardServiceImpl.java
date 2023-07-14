@@ -143,4 +143,9 @@ public class BoardServiceImpl implements BoardService {
 
         return report;
     }
+
+    @Override
+    public List<BoardDto> getNewList() throws Exception {
+        return boardMapper.getNewList();
+    }
 }
