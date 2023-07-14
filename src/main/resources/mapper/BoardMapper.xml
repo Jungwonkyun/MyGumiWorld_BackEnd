@@ -212,6 +212,7 @@
 		SELECT boardNo, title
 		FROM board
 		WHERE status = 1
+        ORDER BY createDate desc
 		LIMIT 3;
 	</select>
 </mapper>
