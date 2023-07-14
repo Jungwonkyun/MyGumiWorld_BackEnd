@@ -34,6 +34,9 @@ public class BoardDto {
 	@ApiModelProperty(value = "작성자 닉네임")
 	private String writerName;
 
+	@ApiModelProperty(value = "작성자 프로필 사진 링크")
+	private String writerImg;
+
 	@ApiModelProperty(value = "좋아요 갯수")
 	private int likesNum;
 

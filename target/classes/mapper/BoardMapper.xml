@@ -35,7 +35,7 @@
 	
 	<!-- 게시글 상세 내용 출력 -->
 	<select id="getBoardDetail" parameterType="String" resultType="boardDto">
-		SELECT boardNo, title, content, hit, writerId, folder, saveName, originName, nickname AS writerName,
+		SELECT boardNo, title, content, hit, writerId, folder, saveName, originName, nickname AS writerName, thumbnail_image_url AS writerImg,
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -60,7 +60,7 @@
 	
 	<!-- 게시글의 댓글 출력 -->
 	<select id="getComments" parameterType="String" resultType="commentDto">
-		SELECT commentNo, content, nickname AS writerName, writerId, status,
+		SELECT commentNo, content, nickname AS writerName, writerId, status, thumbnail_image_url AS writerImg,
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -76,7 +76,11 @@
 	
 	<!-- 게시글의 대댓글 출력 -->
 	<select id="getReplys" parameterType="String" resultType="replyCommentDto">
+<<<<<<< HEAD
 		SELECT replyNo, commentNo, content, nickname AS writerName, writerId, status,
+=======
+		SELECT replyNo, commentNo, content, nickname AS writerName, writerId, status, thumbnail_image_url AS writerImg,
+>>>>>>> 8ddafa9dc6ec45cda175833d44c0ebdc9e4ca3f3
 		CASE
 			WHEN HOUR(TIMEDIFF(NOW(), createDate)) <![CDATA[ <= ]]> 1 THEN
 				CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전')
@@ -215,4 +219,28 @@
         ORDER BY createDate desc
 		LIMIT 3;
 	</select>
+<<<<<<< HEAD
+=======
+
+	<!-- 회원탈퇴 시 게시물 삭제-->
+	<update id="deleteUserBoard" parameterType="Long">
+		UPDATE board
+		SET status = 0
+		WHERE writerId = #{id}
+	</update>
+
+	<!-- 회원탈퇴 시 댓글 삭제-->
+	<update id="deleteUserComment" parameterType="Long">
+		UPDATE comment
+		SET status = 0
+		WHERE writerId = #{id}
+	</update>
+
+	<!-- 회원탈퇴 시 대댓글 삭제-->
+	<update id="deleteUserReply" parameterType="Long">
+		UPDATE reply
+		SET status = 0
+		WHERE writerId = #{id}
+	</update>
+>>>>>>> 8ddafa9dc6ec45cda175833d44c0ebdc9e4ca3f3
 </mapper>
