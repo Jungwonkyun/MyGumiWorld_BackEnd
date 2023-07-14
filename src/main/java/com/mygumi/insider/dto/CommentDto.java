@@ -19,6 +19,7 @@ public class CommentDto {
 	private String writerId;
 	private String writerName;
 	private String createDate;
+	private String writerImg;
 	private int status;
 	private ArrayList<ReplyCommentDto> replyList;
 	

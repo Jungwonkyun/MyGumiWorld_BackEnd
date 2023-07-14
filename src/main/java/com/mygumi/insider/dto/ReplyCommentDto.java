@@ -12,6 +12,7 @@ public class ReplyCommentDto {
 	private String boardNo;
 	private String writerId;
 	private String writerName;
+	private String writerImg;
 	private String createDate;
 	private String content;
 	private int status;
