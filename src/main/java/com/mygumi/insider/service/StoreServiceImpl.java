@@ -42,6 +42,31 @@ public class StoreServiceImpl implements StoreService {
     }
 
     @Override
+    public List<StoreDTO> getStoreWithAutoComplete(String search) {
+
+        List<Store> findStoreLimit5 = storeRepository.findTop5ByStoreNameStartsWith(search);
+
+        List<StoreDTO> stores = new ArrayList<>();
+        for (Store findStore : findStoreLimit5) {
+
+            StoreDTO tmp = StoreDTO.builder()
+                    .id(findStore.getId())
+                    .storeName(findStore.getStoreName())
+                    .address(findStore.getAddress())
+                    .lng(findStore.getLng())
+                    .lat(findStore.getLat())
+                    .category(findStore.getCategory())
+                    .store_image(findStore.getStoreImage())
+                    .store_hours(findStore.getStoreHours())
+                    .build();
+
+            stores.add(tmp);
+        }
+
+        return stores;
+    }
+
+    @Override
     public StoreWithReviewDTO getStoreWithReviews(Long storeId) {
 
         Store findStoreWithReviews = storeRepository.getStoreWithReviews(storeId);

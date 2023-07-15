@@ -9,6 +9,8 @@ public interface StoreService {
 
     List<StoreDTO> getAllStore();
 
+    List<StoreDTO> getStoreWithAutoComplete(String search);
+
     StoreWithReviewDTO getStoreWithReviews(Long storeId);
 
     StoreWithReviewDTO getStoreWithReviewsByStoreName(String storeName);

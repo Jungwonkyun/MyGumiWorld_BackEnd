@@ -29,6 +29,11 @@ public class StoreController {
         return storeService.getAllStore();
     }
 
+    @GetMapping("/q/{search}")
+    public List<StoreDTO> getStoresByNameWithAutoComplete(@PathVariable("search") String search) {
+        return storeService.getStoreWithAutoComplete(search);
+    }
+
     @GetMapping("/id/{storeId}")
     public DetailStoreDTO getDetailStoreInfo(@PathVariable("storeId") Long storeId) {
 
