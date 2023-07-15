@@ -107,7 +107,7 @@ public class BoardController {
 	public ResponseEntity<Map<String, Object>> writeBoard(
 			@RequestHeader("Authorization") String jwt,
 			@ApiParam(value = "{\"title\":\"제목\", \"content\":\"내용\"}") @RequestPart(value="boardDto") BoardDto boardDto,
-			@ApiParam(value = "files(배열 형태)") @RequestPart(value = "files", required = false) MultipartFile[] files){
+			@ApiParam(value = "files(배열 형태)") @RequestPart(value = "files", required = false) MultipartFile files){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		logger.info("게시물 작성");
 		String accessToken = jwt.replace("Bearer ", "");
@@ -116,16 +116,20 @@ public class BoardController {
 		logger.debug("게시물 내용 {}:", boardDto);
 		
 		try {
-			for(MultipartFile file : files) {
+			if(!files.isEmpty()){
+//				logger.debug("null");
+//			}
+//			for(MultipartFile file : files) {
+				logger.debug("파일 존재함");
 				String projectPath = new File("").getAbsolutePath();
 				String fileSavePath = "/src/main/resources/static/files";
-				String originName = file.getOriginalFilename();
+				String originName = files.getOriginalFilename();
 				String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
 				boardDto.setFolder(URL1 + saveName + URL2);
 				boardDto.setOriginName(originName);
 				boardDto.setSaveName(saveName);
 				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
-				file.transferTo(new File(projectPath+fileSavePath, saveName));
+				files.transferTo(new File(projectPath+fileSavePath, saveName));
 			}
 			boardService.writeBoard(boardDto);
 			resultMap.put("message", SUCCESS);
@@ -186,7 +190,7 @@ public class BoardController {
 	public ResponseEntity<Map<String, Object>> modifyBoard(
 			@RequestHeader("Authorization") String jwt,
 			@ApiParam(value = "{\"boardNo\":\"게시판번호\", \"title\":\"새로운 제목\", \"content\":\"새로운 내용\", \"writerId\":\"해당 글을 작성했던 유저의 아이디\"}") @RequestPart(value="boardDto") BoardDto boardDto,
-			@ApiParam(value = "files, 배열 형태") @RequestPart(value = "files", required = false) MultipartFile[] files){
+			@ApiParam(value = "files, 배열 형태") @RequestPart(value = "files", required = false) MultipartFile files){
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		String accessToken = jwt.replace("Bearer ", "");
 		String id = String.valueOf(authTokensGenerator.extractMemberId(accessToken));
@@ -203,16 +207,17 @@ public class BoardController {
 		// 게시글 수정
 		try {
 			// 사진이 있을 시, 사진 수정
-			for(MultipartFile file : files) {
+			if(!files.isEmpty()){
+//			for(MultipartFile file : files) {
 				String projectPath = new File("").getAbsolutePath();
 				String fileSavePath = "/src/main/resources/static/files";
-				String originName = file.getOriginalFilename();
+				String originName = files.getOriginalFilename();
 				String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
 				boardDto.setFolder(URL1+saveName+URL2);
 				boardDto.setOriginName(originName);
 				boardDto.setSaveName(saveName);
 				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
-				file.transferTo(new File(projectPath+fileSavePath, saveName));
+				files.transferTo(new File(projectPath+fileSavePath, saveName));
 			}
 			boardService.modifyBoard(boardDto);
 			resultMap.put("message", SUCCESS);
