@@ -31,6 +31,8 @@ public class StoreServiceImpl implements StoreService {
                     .lng(findStore.getLng())
                     .lat(findStore.getLat())
                     .category(findStore.getCategory())
+                    .store_image(findStore.getStoreImage())
+                    .store_hours(findStore.getStoreHours())
                     .build();
 
             stores.add(tmp);
