@@ -27,4 +27,10 @@ public class StoreDTO {
 
     @ApiModelProperty(value = "가게 경도")
     private String lng;
+
+    @ApiModelProperty(value = "가게 사진")
+    private String store_image;
+
+    @ApiModelProperty(value = "가게 영업 시간")
+    private String store_hours;
 }

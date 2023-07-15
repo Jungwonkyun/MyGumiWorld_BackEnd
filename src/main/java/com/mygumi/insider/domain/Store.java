@@ -32,4 +32,8 @@ public class Store {
     @JsonManagedReference
     @OneToMany(mappedBy = "store")
     private List<Review> reviews;
+
+    private String storeImage;
+
+    private String storeHours;
 }
