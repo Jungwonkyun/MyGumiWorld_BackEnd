@@ -117,7 +117,7 @@ public class BoardController {
 		logger.debug("게시물 내용 {}:", boardDto);
 		
 		try {
-			if(!files.isEmpty()){
+			if(files != null && !files.isEmpty()){
 //				logger.debug("null");
 //			}
 //			for(MultipartFile file : files) {
@@ -208,7 +208,7 @@ public class BoardController {
 		// 게시글 수정
 		try {
 			// 사진이 있을 시, 사진 수정
-			if(!files.isEmpty()){
+			if(files != null && !files.isEmpty()){
 //			for(MultipartFile file : files) {
 				String projectPath = new File("").getAbsolutePath();
 				String fileSavePath = "/src/main/resources/static/files";
