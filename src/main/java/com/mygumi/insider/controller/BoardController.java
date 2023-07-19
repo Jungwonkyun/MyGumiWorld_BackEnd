@@ -36,7 +36,7 @@ public class BoardController {
 	private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
 	private static final String URL1 = "https://proxy.goorm.io/service/64a432721173303c40366663_d0UKmPGX2nZ0fC2MbAA.run.goorm.io/9080/file/load/";
-    private static final String URL2 = "?path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRmYzN2IzMTlhLThhM2YtNDJiZi1hMTljLTkzNTAyODJlZWRiYS5wbmc=&docker_id=d0UKmPGX2nZ0fC2MbAA&secure_session_id=AFgwbBY8t80myD4OrMbDD_u1YsX8VQO-";
+    private static final String URL2 = "?path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRjE1NzRhMTI5LTZiZWUtNDdmMi1hZTg5LTVmMjc3OTA4MDc3My5wbmc=&docker_id=d0UKmPGX2nZ0fC2MbAA&secure_session_id=z4yu_n3ppLwgv5ZR-F_EqT82lEIaE_ri";
 	// private static final String URL2 = "path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRmQ0YWE2ZThjLWEwZTAtNGRlNi04YzhjLTZiNjQzOTNiODE2YS5wbmc=&docker_id=d3EDtUkpmSQtVTvRKp4&secure_session_id=tSqBga4uiZ7LH5w3yaI1VsAsZbXVep6i";
 
 	@Autowired
@@ -117,7 +117,7 @@ public class BoardController {
 		logger.debug("게시물 내용 {}:", boardDto);
 		
 		try {
-			if(!files.isEmpty()){
+			if(files != null && !files.isEmpty()){
 //				logger.debug("null");
 //			}
 //			for(MultipartFile file : files) {
@@ -208,7 +208,7 @@ public class BoardController {
 		// 게시글 수정
 		try {
 			// 사진이 있을 시, 사진 수정
-			if(!files.isEmpty()){
+			if(files != null &&!files.isEmpty()){
 //			for(MultipartFile file : files) {
 				String projectPath = new File("").getAbsolutePath();
 				String fileSavePath = "/src/main/resources/static/files";

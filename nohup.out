@@ -26134,3 +26134,1773 @@ savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45b
 java.io.FileInputStream@208a5e46
 savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
 java.io.FileInputStream@4306a9cf
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.13)
+
+2023-07-19 11:23:57.899  INFO 3640401 --- [           main] com.mygumi.insider.InsiderApplication    : Starting InsiderApplication v0.0.1-SNAPSHOT using Java 11.0.14 on goorm with PID 3640401 (/workspace/MyGumiWorld_BackEnd/target/insider-0.0.1-SNAPSHOT.jar started by root in /workspace/MyGumiWorld_BackEnd)
+2023-07-19 11:23:57.904 DEBUG 3640401 --- [           main] com.mygumi.insider.InsiderApplication    : Running with Spring Boot v2.7.13, Spring v5.3.28
+2023-07-19 11:23:57.908  INFO 3640401 --- [           main] com.mygumi.insider.InsiderApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-07-19 11:24:00.645  INFO 3640401 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-19 11:24:00.832  INFO 3640401 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 163 ms. Found 7 JPA repository interfaces.
+2023-07-19 11:24:02.376  INFO 3640401 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-07-19 11:24:02.403  INFO 3640401 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-19 11:24:02.406  INFO 3640401 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.76]
+2023-07-19 11:24:02.554  INFO 3640401 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-19 11:24:02.555  INFO 3640401 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4488 ms
+2023-07-19 11:24:03.091  INFO 3640401 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-19 11:24:03.186  INFO 3640401 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-07-19 11:24:03.876  INFO 3640401 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-19 11:24:04.148  INFO 3640401 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-19 11:24:04.580  INFO 3640401 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-19 11:24:04.655  INFO 3640401 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-07-19 11:24:06.178  INFO 3640401 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-19 11:24:06.196  INFO 3640401 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-19 11:24:08.924  WARN 3640401 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-19 11:24:09.914  INFO 3640401 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-07-19 11:24:11.314  INFO 3640401 --- [           main] com.mygumi.insider.InsiderApplication    : Started InsiderApplication in 14.695 seconds (JVM running for 15.754)
+2023-07-19 11:24:40.957  INFO 3640401 --- [nio-8080-exec-1] o.apache.tomcat.util.http.parser.Cookie  : A cookie header was received [SL_C_23361dd035530_SID={"5f138ee7ab583867cc8cd897279e0b29a88d6a54":{"sessionId":"1Ahy9MDhcAvxpBGYPpaBK","visitorId":"FhoC-T7mjNWaO8uSPflt-"},"3bc1fab1a8e67fabe9b4d36429b01d29f8f79fb7":{"sessionId":"ChaiKKpkFPNb4w__RRS1J","visitorId":"Q_sYyw33M8RyTm3-jrH-B"}};] that contained an invalid cookie. That cookie will be ignored.
+ Note: further occurrences of this error will be logged at DEBUG level.
+2023-07-19 11:24:40.969  INFO 3640401 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-19 11:24:40.969  INFO 3640401 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-19 11:24:40.972  INFO 3640401 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-07-19 11:24:41.430  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 11:24:41.462  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 11:24:41.471  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 시각:1900
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"1900","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"REH","nx":86,"ny":95,"obsrValue":"87"},{"baseDate":"20230719","baseTime":"1900","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"T1H","nx":86,"ny":95,"obsrValue":"25.1"},{"baseDate":"20230719","baseTime":"1900","category":"UUU","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"VEC","nx":86,"ny":95,"obsrValue":"178"},{"baseDate":"20230719","baseTime":"1900","category":"VVV","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230719","baseTime":"1900","category":"WSD","nx":86,"ny":95,"obsrValue":"0.6"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"1900"},{"obsrValue":"87","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"1900"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"1900"},{"obsrValue":"25.1","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"1900"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"1900"},{"obsrValue":"178","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"1900"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"1900"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"1900"}]
+2023-07-19 11:24:50.585  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 11:24:50.726 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 11:24:50.779 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 11:24:50.824 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 13
+2023-07-19 11:25:03.961  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 게시물 작성
+2023-07-19 11:25:04.018 DEBUG 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 게시물 내용 BoardDto{boardNo='null', title='임시', content='임시내', hit=0, createDate='null', updateDate='null', writerId='1', writerName='null', likesNum=0, likeStatus=0, folder='null', originName='null', saveName='null'}:
+2023-07-19 11:25:04.064 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.writeBoard      : ==>  Preparing: INSERT INTO board(title, content, createDate, writerId, folder, originName, saveName) VALUES(?, ?, NOW(), ?, ?, ?, ?);
+2023-07-19 11:25:04.069 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.writeBoard      : ==> Parameters: 임시(String), 임시내(String), 1(String), null, null, null
+2023-07-19 11:25:04.073 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.writeBoard      : <==    Updates: 1
+2023-07-19 11:27:49.508  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 11:27:49.508  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 11:27:49.509  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 시각:1900
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"1900","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"REH","nx":86,"ny":95,"obsrValue":"87"},{"baseDate":"20230719","baseTime":"1900","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"T1H","nx":86,"ny":95,"obsrValue":"25.1"},{"baseDate":"20230719","baseTime":"1900","category":"UUU","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"VEC","nx":86,"ny":95,"obsrValue":"178"},{"baseDate":"20230719","baseTime":"1900","category":"VVV","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230719","baseTime":"1900","category":"WSD","nx":86,"ny":95,"obsrValue":"0.6"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"1900"},{"obsrValue":"87","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"1900"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"1900"},{"obsrValue":"25.1","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"1900"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"1900"},{"obsrValue":"178","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"1900"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"1900"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"1900"}]
+2023-07-19 11:27:49.661  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 11:27:49.662  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 11:27:49.662  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 시각:20
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-19 11:27:56.541  INFO 3640401 --- [io-8080-exec-10] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 11:27:56.543  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 11:27:56.543  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.WeatherServiceImpl   : 현재 시각:1900
+2023-07-19 11:27:56.564  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 11:27:56.565  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 11:27:56.566  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.MealServiceImpl      : 현재 시각:20
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"1900","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"REH","nx":86,"ny":95,"obsrValue":"87"},{"baseDate":"20230719","baseTime":"1900","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"T1H","nx":86,"ny":95,"obsrValue":"25.1"},{"baseDate":"20230719","baseTime":"1900","category":"UUU","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"1900","category":"VEC","nx":86,"ny":95,"obsrValue":"178"},{"baseDate":"20230719","baseTime":"1900","category":"VVV","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230719","baseTime":"1900","category":"WSD","nx":86,"ny":95,"obsrValue":"0.6"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"1900"},{"obsrValue":"87","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"1900"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"1900"},{"obsrValue":"25.1","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"1900"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"1900"},{"obsrValue":"178","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"1900"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"1900"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"1900"}]
+2023-07-19 11:27:58.073  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 11:27:58.075 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 11:27:58.076 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 11:27:58.081 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 11:28:13.518  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 11:28:13.519 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 11:28:13.520 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 11:28:13.526 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 14
+2023-07-19 11:28:15.551  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 11:28:15.552 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 11:28:15.553 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 11:28:15.554 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 11:28:58.449  WARN 3640401 --- [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 11:28:58.636  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 11:28:58.638  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 11:28:58.639  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 시각:20
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-19 11:29:20.476  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 11:29:20.478 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 11:29:20.479 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 11:29:20.488 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 14
+2023-07-19 11:29:27.244  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 11:29:27.248 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 11:29:27.251 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 11:29:27.255 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 11:54:05.732  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 11:54:05.732  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 11:54:05.732  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2000
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2000","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2000","category":"REH","nx":86,"ny":95,"obsrValue":"89"},{"baseDate":"20230719","baseTime":"2000","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2000","category":"T1H","nx":86,"ny":95,"obsrValue":"24.6"},{"baseDate":"20230719","baseTime":"2000","category":"UUU","nx":86,"ny":95,"obsrValue":"1"},{"baseDate":"20230719","baseTime":"2000","category":"VEC","nx":86,"ny":95,"obsrValue":"216"},{"baseDate":"20230719","baseTime":"2000","category":"VVV","nx":86,"ny":95,"obsrValue":"1.4"},{"baseDate":"20230719","baseTime":"2000","category":"WSD","nx":86,"ny":95,"obsrValue":"1.7"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2000"},{"obsrValue":"89","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2000"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2000"},{"obsrValue":"24.6","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2000"},{"obsrValue":"1","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2000"},{"obsrValue":"216","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2000"},{"obsrValue":"1.4","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2000"},{"obsrValue":"1.7","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2000"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 11:54:07.429  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 11:54:07.430 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 11:54:07.430 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 11:54:07.432 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 11:54:08.996  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 11:54:08.997 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 11:54:08.998 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 11:54:09.002 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 14
+2023-07-19 11:54:18.084  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 11:54:18.085 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 11:54:18.085 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 11:54:18.086 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 11:54:19.520  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 11:54:19.521 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 11:54:19.522 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 11:54:19.525 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 14
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 11:54:33.460  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 11:54:33.460  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 11:54:33.460  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2000
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2000","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2000","category":"REH","nx":86,"ny":95,"obsrValue":"89"},{"baseDate":"20230719","baseTime":"2000","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2000","category":"T1H","nx":86,"ny":95,"obsrValue":"24.6"},{"baseDate":"20230719","baseTime":"2000","category":"UUU","nx":86,"ny":95,"obsrValue":"1"},{"baseDate":"20230719","baseTime":"2000","category":"VEC","nx":86,"ny":95,"obsrValue":"216"},{"baseDate":"20230719","baseTime":"2000","category":"VVV","nx":86,"ny":95,"obsrValue":"1.4"},{"baseDate":"20230719","baseTime":"2000","category":"WSD","nx":86,"ny":95,"obsrValue":"1.7"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2000"},{"obsrValue":"89","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2000"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2000"},{"obsrValue":"24.6","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2000"},{"obsrValue":"1","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2000"},{"obsrValue":"216","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2000"},{"obsrValue":"1.4","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2000"},{"obsrValue":"1.7","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2000"}]
+2023-07-19 11:54:35.044  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 11:54:35.045 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 11:54:35.046 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 11:54:35.047 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 11:54:36.270  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 11:54:36.271 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 11:54:36.271 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 11:54:36.276 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 14
+2023-07-19 11:54:43.489  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : 게시물 작성
+2023-07-19 11:54:43.577 DEBUG 3640401 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : 게시물 내용 BoardDto{boardNo='null', title='하이', content='제발', hit=0, createDate='null', updateDate='null', writerId='10', writerName='null', likesNum=0, likeStatus=0, folder='null', originName='null', saveName='null'}:
+2023-07-19 11:54:43.580 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.writeBoard      : ==>  Preparing: INSERT INTO board(title, content, createDate, writerId, folder, originName, saveName) VALUES(?, ?, NOW(), ?, ?, ?, ?);
+2023-07-19 11:54:43.582 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.writeBoard      : ==> Parameters: 하이(String), 제발(String), 10(String), null, null, null
+2023-07-19 11:54:43.584 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.writeBoard      : <==    Updates: 1
+2023-07-19 11:55:51.417  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 11:55:51.418 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 11:55:51.419 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 11:55:51.422 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 15
+2023-07-19 12:03:18.255  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 12:03:18.255  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 12:03:18.255  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.MealServiceImpl      : 현재 시각:21
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-19 12:05:26.258  INFO 3640401 --- [io-8080-exec-10] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 12:05:26.258  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 12:05:26.258  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2000
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2000","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2000","category":"REH","nx":86,"ny":95,"obsrValue":"91"},{"baseDate":"20230719","baseTime":"2000","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2000","category":"T1H","nx":86,"ny":95,"obsrValue":"24.8"},{"baseDate":"20230719","baseTime":"2000","category":"UUU","nx":86,"ny":95,"obsrValue":"0.8"},{"baseDate":"20230719","baseTime":"2000","category":"VEC","nx":86,"ny":95,"obsrValue":"263"},{"baseDate":"20230719","baseTime":"2000","category":"VVV","nx":86,"ny":95,"obsrValue":"0.1"},{"baseDate":"20230719","baseTime":"2000","category":"WSD","nx":86,"ny":95,"obsrValue":"0.8"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2000"},{"obsrValue":"91","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2000"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2000"},{"obsrValue":"24.8","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2000"},{"obsrValue":"0.8","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2000"},{"obsrValue":"263","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2000"},{"obsrValue":"0.1","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2000"},{"obsrValue":"0.8","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2000"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 12:05:29.568  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 12:05:29.569 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 12:05:29.570 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 12:05:29.571 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 12:05:35.353  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 12:05:35.354 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 12:05:35.354 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 12:05:35.357 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 15
+2023-07-19 12:05:53.458  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 게시물 작성
+2023-07-19 12:05:53.461 DEBUG 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 게시물 내용 BoardDto{boardNo='null', title='hello!!1', content='bye', hit=0, createDate='null', updateDate='null', writerId='10', writerName='null', likesNum=0, likeStatus=0, folder='null', originName='null', saveName='null'}:
+2023-07-19 12:05:53.471 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.writeBoard      : ==>  Preparing: INSERT INTO board(title, content, createDate, writerId, folder, originName, saveName) VALUES(?, ?, NOW(), ?, ?, ?, ?);
+2023-07-19 12:05:53.472 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.writeBoard      : ==> Parameters: hello!!1(String), bye(String), 10(String), null, null, null
+2023-07-19 12:05:53.474 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.writeBoard      : <==    Updates: 1
+2023-07-19 12:05:55.350  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 12:05:55.352 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 12:05:55.353 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 12:05:55.358 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 16
+2023-07-19 12:06:03.802  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 12:06:03.803 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 12:06:03.804 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 12:06:03.806 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 16
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 12:13:26.075  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 12:13:26.076  INFO 3640401 --- [io-8080-exec-10] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 12:13:26.076  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 12:13:26.076  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 12:13:26.076  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2000
+2023-07-19 12:13:26.076  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 시각:21
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2000","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2000","category":"REH","nx":86,"ny":95,"obsrValue":"92"},{"baseDate":"20230719","baseTime":"2000","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2000","category":"T1H","nx":86,"ny":95,"obsrValue":"24.7"},{"baseDate":"20230719","baseTime":"2000","category":"UUU","nx":86,"ny":95,"obsrValue":"0.5"},{"baseDate":"20230719","baseTime":"2000","category":"VEC","nx":86,"ny":95,"obsrValue":"231"},{"baseDate":"20230719","baseTime":"2000","category":"VVV","nx":86,"ny":95,"obsrValue":"0.4"},{"baseDate":"20230719","baseTime":"2000","category":"WSD","nx":86,"ny":95,"obsrValue":"0.6"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2000"},{"obsrValue":"92","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2000"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2000"},{"obsrValue":"24.7","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2000"},{"obsrValue":"0.5","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2000"},{"obsrValue":"231","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2000"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2000"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2000"}]
+2023-07-19 12:28:50.117  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 게시물 작성
+2023-07-19 12:28:50.119 DEBUG 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 게시물 내용 BoardDto{boardNo='null', title='test', content='hi', hit=0, createDate='null', updateDate='null', writerId='10', writerName='null', likesNum=0, likeStatus=0, folder='null', originName='null', saveName='null'}:
+2023-07-19 12:28:50.121 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.writeBoard      : ==>  Preparing: INSERT INTO board(title, content, createDate, writerId, folder, originName, saveName) VALUES(?, ?, NOW(), ?, ?, ?, ?);
+2023-07-19 12:28:50.122 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.writeBoard      : ==> Parameters: test(String), hi(String), 10(String), null, null, null
+2023-07-19 12:28:50.175 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.writeBoard      : <==    Updates: 1
+2023-07-19 12:28:52.139  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 12:28:52.140 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 12:28:52.141 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 12:28:52.177 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 12:42:33.682  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 12:42:33.682 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 12:42:33.683 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 12:42:33.686 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@72f5cce0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5ba29fe1
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7a2b827
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@360666b4
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@54a83af0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@315864d3
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@27c24ade
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@591f2c00
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@42374b6e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@1f8488c3
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@f7021bc
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@67db6bbf
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6fd2935c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@70a6cffb
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@1341e9dc
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@522f1758
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3e0716a1
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@774ce826
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2309418f
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7ccfd78d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@794964e7
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@1516c78
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5a692c49
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2c2a00ef
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@20239f32
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@68ef7318
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3e224f1e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@54ecccd7
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5a2eb01d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2ff895e2
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@4529d43e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@13209ff5
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7faac284
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4206723a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7c240f6a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@602e689e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@f617f8
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@71d3e825
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@401f29e9
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@1dd7afcb
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@30380707
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@576caf30
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@1dca9654
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@40f137b7
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@35d72982
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@9c7a14a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@44727963
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@457a984b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@600ef06
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@c82042c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4bffb308
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@66e4875e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3775c762
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@50ecfa57
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@33638387
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@602b8cc4
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7045fed8
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@372eefe0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@6cdc0556
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@b9304b1
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@430824e1
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@1f95604a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@52137e62
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6a633ff7
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5ce682a5
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@34dccd7d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5f843c99
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4648cc9d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7b94f00f
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@571015f6
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5071de86
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@2feced97
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3cef36c5
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4562c4fe
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4328f926
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7c14289d
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@1ea15176
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@197417b0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@23fb5ad1
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@8961de3
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@128c0450
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3f5f67fc
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6dbd5f94
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@74effe4b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@a77855d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@ebaa50e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7f6db17
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@2efd688b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@cab9a92
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@34e7fd99
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@4d609be7
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6b6519f
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5a60b2c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@1433377
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@423e742d
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@2224457c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@1453f1d4
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2cd07e99
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@38083c7d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7d4e7509
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3e8f993b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@74fe690
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5cceb302
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2afc265
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@3e6b5084
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@728b006b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7040eebe
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@38d23d7b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6d19ff20
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@552a7421
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5b0806f0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@283da89
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@963432
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@509f17e7
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3cd76906
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4bfb501d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@9940fb5
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@135687
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@1f45d857
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@118e89ff
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6e4289d6
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@9157134
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@4ddbf880
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7aa89b8
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@3f1f44a8
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@e07c0d9
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@59bb7b1f
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@b136829
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5633d7fb
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@258018f8
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7602d7e2
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@383bf327
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@e1795ea
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@dcb4c74
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@56986270
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@210c4336
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@20294f81
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5fbb27f
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@14b7da47
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5d8301be
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5f7d3c83
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@447bb2af
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@6a9c0bdc
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@f299ab1
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@bae8724
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@57eb6024
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@2ceb6e5e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@36f5d70e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5b8efd53
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@44d99e1a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@58b07f3b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5b1a9519
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@21da1992
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@8b14d0b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@1ac455f4
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7eab34cb
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@36d6a22a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7c336e7
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3e2a56ac
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@47b77d95
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7a8e29c8
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@49176902
+2023-07-19 13:05:20.493  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 13:05:20.493  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 13:05:20.493  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2100
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2100","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2100","category":"REH","nx":86,"ny":95,"obsrValue":"94"},{"baseDate":"20230719","baseTime":"2100","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2100","category":"T1H","nx":86,"ny":95,"obsrValue":"24"},{"baseDate":"20230719","baseTime":"2100","category":"UUU","nx":86,"ny":95,"obsrValue":"1.1"},{"baseDate":"20230719","baseTime":"2100","category":"VEC","nx":86,"ny":95,"obsrValue":"265"},{"baseDate":"20230719","baseTime":"2100","category":"VVV","nx":86,"ny":95,"obsrValue":"0.1"},{"baseDate":"20230719","baseTime":"2100","category":"WSD","nx":86,"ny":95,"obsrValue":"1.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2100"},{"obsrValue":"94","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2100"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2100"},{"obsrValue":"24","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2100"},{"obsrValue":"1.1","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2100"},{"obsrValue":"265","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2100"},{"obsrValue":"0.1","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2100"},{"obsrValue":"1.1","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2100"}]
+2023-07-19 13:05:23.018  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:05:23.019 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:05:23.019 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:05:23.020 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:05:30.725  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:05:30.726 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:05:30.727 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:05:30.729 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 13:07:24.116  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 13:07:24.116  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 13:07:24.116  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2100
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2100","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2100","category":"REH","nx":86,"ny":95,"obsrValue":"93"},{"baseDate":"20230719","baseTime":"2100","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2100","category":"T1H","nx":86,"ny":95,"obsrValue":"24"},{"baseDate":"20230719","baseTime":"2100","category":"UUU","nx":86,"ny":95,"obsrValue":"-0.3"},{"baseDate":"20230719","baseTime":"2100","category":"VEC","nx":86,"ny":95,"obsrValue":"104"},{"baseDate":"20230719","baseTime":"2100","category":"VVV","nx":86,"ny":95,"obsrValue":"0.1"},{"baseDate":"20230719","baseTime":"2100","category":"WSD","nx":86,"ny":95,"obsrValue":"0.4"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2100"},{"obsrValue":"93","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2100"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2100"},{"obsrValue":"24","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2100"},{"obsrValue":"-0.3","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2100"},{"obsrValue":"104","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2100"},{"obsrValue":"0.1","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2100"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2100"}]
+2023-07-19 13:07:26.142  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:07:26.143 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:07:26.143 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:07:26.144 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:07:28.825  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:07:28.826 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:07:28.826 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:07:28.829 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 13:29:11.077  INFO 3640401 --- [io-8080-exec-10] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 13:29:11.078  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 13:29:11.078  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 시각:22
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-19 13:29:11.365  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 13:29:11.365  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 13:29:11.365  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2100
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2100","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2100","category":"REH","nx":86,"ny":95,"obsrValue":"95"},{"baseDate":"20230719","baseTime":"2100","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2100","category":"T1H","nx":86,"ny":95,"obsrValue":"23.7"},{"baseDate":"20230719","baseTime":"2100","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230719","baseTime":"2100","category":"VEC","nx":86,"ny":95,"obsrValue":"247"},{"baseDate":"20230719","baseTime":"2100","category":"VVV","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2100","category":"WSD","nx":86,"ny":95,"obsrValue":"0.7"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2100"},{"obsrValue":"95","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2100"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2100"},{"obsrValue":"23.7","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2100"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2100"},{"obsrValue":"247","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2100"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2100"},{"obsrValue":"0.7","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2100"}]
+2023-07-19 13:29:16.918  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:29:16.919 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:29:16.919 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:29:16.920 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:29:49.202  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:29:49.202 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:29:49.203 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:29:49.204 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:30:00.840  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:30:00.841 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:30:00.841 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:30:00.844 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 13:30:05.702  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:30:05.706 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:30:05.706 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:30:05.707 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:30:07.554  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:30:07.555 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:30:07.555 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:30:07.558 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 13:30:12.375  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:30:12.375 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:30:12.376 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:30:12.377 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:33:44.369  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:33:44.370 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:33:44.371 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:33:44.372 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 13:34:25.275  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 13:34:25.276  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 13:34:25.276  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2100
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2100","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2100","category":"REH","nx":86,"ny":95,"obsrValue":"95"},{"baseDate":"20230719","baseTime":"2100","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2100","category":"T1H","nx":86,"ny":95,"obsrValue":"23.7"},{"baseDate":"20230719","baseTime":"2100","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230719","baseTime":"2100","category":"VEC","nx":86,"ny":95,"obsrValue":"247"},{"baseDate":"20230719","baseTime":"2100","category":"VVV","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2100","category":"WSD","nx":86,"ny":95,"obsrValue":"0.7"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2100"},{"obsrValue":"95","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2100"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2100"},{"obsrValue":"23.7","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2100"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2100"},{"obsrValue":"247","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2100"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2100"},{"obsrValue":"0.7","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2100"}]
+2023-07-19 13:34:29.194  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:34:29.195 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:34:29.196 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:34:29.197 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:35:34.513  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:35:34.514 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:35:34.514 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:35:34.516 DEBUG 3640401 --- [nio-8080-exec-3] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 13:46:41.695  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 13:46:41.695  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 13:46:41.695  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"95"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.6"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.8"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"243"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.4"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.9"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"95","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.6","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.8","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"243","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.9","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+2023-07-19 13:46:46.454  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:46:46.455 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:46:46.455 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:46:46.457 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:46:49.539  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:46:49.540 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:46:49.540 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:46:49.543 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 13:48:05.096  WARN 3640401 --- [nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 13:49:31.678  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 13:49:31.679  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 13:49:31.679  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"94"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.6"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"243"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.7"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"94","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.6","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"243","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.7","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+2023-07-19 13:49:36.825  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:49:36.826 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:49:36.826 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:49:36.827 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:49:46.574  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:49:46.574 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:49:46.575 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:49:46.580 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 13:49:52.487  WARN 3640401 --- [nio-8080-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-19 13:49:56.726  WARN 3640401 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-19 13:51:25.869  WARN 3640401 --- [nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-19 13:53:47.367  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 13:53:47.367  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 13:53:47.367  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"94"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.6"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"243"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.7"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"94","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.6","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.6","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"243","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.7","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+2023-07-19 13:53:48.611  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:53:48.613 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:53:48.613 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:53:48.614 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:53:51.119  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:53:51.119 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:53:51.120 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:53:51.122 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 13:54:09.417  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:54:09.418 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:54:09.418 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:54:09.419 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:54:12.452  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:54:12.453 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:54:12.454 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:54:12.464 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 13:54:18.256  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 13:54:18.257 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 13:54:18.257 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 13:54:18.258 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 13:57:28.924  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 13:57:28.925 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 13:57:28.925 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 13:57:28.927 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 13:59:34.114  WARN 3640401 --- [nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-19 14:01:34.735  WARN 3640401 --- [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-19 14:10:49.244  WARN 3640401 --- [nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-19 14:12:40.158  WARN 3640401 --- [io-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2023-07-19 14:15:56.544  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:15:56.545 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:15:56.545 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:15:56.546 DEBUG 3640401 --- [nio-8080-exec-7] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 14:16:14.828  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:16:14.828  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:16:14.828  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-19 14:16:15.038  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 14:16:15.039  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 14:16:15.039  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.2"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"180"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.7"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.7"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"96","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.2","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"180","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.7","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.7","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+2023-07-19 14:16:16.483  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:16:16.484 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:16:16.484 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:16:16.485 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 14:16:24.798  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:16:24.799 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:16:24.799 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:16:24.800 DEBUG 3640401 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 14:16:43.229  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:16:43.229 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:16:43.230 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:16:43.230 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 14:16:49.713  INFO 3640401 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:16:49.713 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:16:49.714 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:16:49.714 DEBUG 3640401 --- [nio-8080-exec-4] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 14:17:07.260  INFO 3640401 --- [io-8080-exec-10] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:17:07.260  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:17:07.260  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-19 14:17:14.179  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:17:14.179  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:17:14.179  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-19 14:17:15.255  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:17:15.256 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:17:15.256 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:17:15.257 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 14:17:24.930  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 14:17:24.931 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 14:17:24.931 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 14:17:24.933 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 14:17:31.669  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : BoardList 모두 반환
+2023-07-19 14:17:31.670 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==>  Preparing: SELECT boardNo, title, hit, folder, saveName, originName, LEFT(content, 50) content, CASE WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 1 THEN CONCAT(MINUTE(TIMEDIFF(NOW(), createDate)), '분 전') WHEN HOUR(TIMEDIFF(NOW(), createDate)) <= 24 THEN CONCAT(HOUR(TIMEDIFF(NOW(), createDate)), '시간 전') ELSE DATE_FORMAT(createDate, '%Y-%m-%d') END AS createDate FROM board WHERE status = 1 ORDER BY boardNo DESC;
+2023-07-19 14:17:31.670 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : ==> Parameters: 
+2023-07-19 14:17:31.673 DEBUG 3640401 --- [nio-8080-exec-9] c.m.i.mapper.BoardMapper.getBoards       : <==      Total: 17
+2023-07-19 14:21:17.234  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:21:17.235 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:21:17.236 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:21:17.237 DEBUG 3640401 --- [nio-8080-exec-1] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 14:26:36.715  INFO 3640401 --- [io-8080-exec-10] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:26:36.718 DEBUG 3640401 --- [io-8080-exec-10] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:26:36.718 DEBUG 3640401 --- [io-8080-exec-10] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:26:36.719 DEBUG 3640401 --- [io-8080-exec-10] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 14:27:09.236  INFO 3640401 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:27:09.237 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:27:09.237 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:27:09.238 DEBUG 3640401 --- [nio-8080-exec-5] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+2023-07-19 14:27:17.338  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 14:27:17.339  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 14:27:17.339  INFO 3640401 --- [nio-8080-exec-7] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 14:27:17.407  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:27:17.408  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:27:17.408  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.2"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"232"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.2"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.4"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"96","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.2","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"232","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.2","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+2023-07-19 14:27:19.345  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:27:19.346 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:27:19.346 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:27:19.347 DEBUG 3640401 --- [nio-8080-exec-8] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@a2de04d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@202a659
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@9b662f8
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@428109ed
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3d1aa98c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3ee456b5
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@930cddc
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@de013c9
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@44f18ffa
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@1a8b199
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5350d596
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@307c79b2
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@4ea67af8
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6f725c5c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3d532528
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@f22f3b1
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@12bb2828
+java.io.FileInputStream@1ecfe87c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@438e7ec8
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 14:27:50.887  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 14:27:50.888  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 14:27:50.888  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+2023-07-19 14:27:50.893  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:27:50.893  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:27:50.893  INFO 3640401 --- [nio-8080-exec-1] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.2"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"232"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.2"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.4"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"96","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.2","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"232","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.2","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 14:29:50.965  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:29:50.965  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:29:50.965  INFO 3640401 --- [nio-8080-exec-3] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-19 14:29:50.971  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 14:29:50.971  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 14:29:50.972  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.2"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"232"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.2"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.4"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"96","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.2","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"232","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.2","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@13d5beb6
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@1f520854
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6f039c37
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@d046dce
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@31cd2442
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4a4bc2c5
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@45d49e61
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@73428077
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4141a978
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@121e4698
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5720e70c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@301cf92a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7cdbdf25
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@71918101
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@32e4a617
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3896f6e4
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@368bad48
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@169c2240
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@4128ab49
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@666370b0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@18d01998
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@1fe63c4d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@14db38f6
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@8ffa311
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@72124e7a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@235302b6
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@48f31502
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4e79c09d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5840778
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@923af68
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@3526fbea
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2fae7947
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@4172b39e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@75f3794c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@f7f7cd8
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4bad49e0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@23b9c5aa
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5484b12
+2023-07-19 14:31:48.657  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:31:48.657  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:31:48.657  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 14:31:48.669  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 14:31:48.675  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 14:31:48.677  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.2"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"232"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.2"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.4"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"96","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.2","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"232","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.2","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@1b36ca18
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@2aebe162
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@449fa892
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@490e28aa
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@505c8cc
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@7617db39
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2c63d1a0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@11b0520a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6f36dc63
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@291e2d2a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@14183e4c
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4161f89a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@33661c63
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@4df8b021
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@514aa3c6
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7a7b0fd
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@609f8f14
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@41f8cfb7
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@12d2d10d
+Hibernate: 
+    select
+        store0_.id as id1_5_,
+        store0_.address as address2_5_,
+        store0_.category as category3_5_,
+        store0_.lat as lat4_5_,
+        store0_.lng as lng5_5_,
+        store0_.store_hours as store_ho6_5_,
+        store0_.store_image as store_im7_5_,
+        store0_.store_name as store_na8_5_ 
+    from
+        store store0_
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7419c32b
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@7a9c14b2
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@636d5408
+2023-07-19 14:32:08.035  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-19 14:32:08.036 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-19 14:32:08.036 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-19 14:32:08.037 DEBUG 3640401 --- [nio-8080-exec-2] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@5c332f83
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6555d6a4
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2abec4fe
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@6fd29791
+2023-07-19 14:32:12.964  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 14:32:12.964  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 14:32:12.964  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.2"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"232"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.2"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.4"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"96","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.2","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"232","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.2","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 14:32:13.889  INFO 3640401 --- [io-8080-exec-10] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:32:13.889  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:32:13.889  INFO 3640401 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5bdfb048
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@e94495a
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@ad22e52
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/ab630564-231f-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@46e27394
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6e89e53a-231b-11ee-be56-0242ac120002.png
+java.io.FileInputStream@404fa2b1
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/4c3ba86a-2320-11ee-be56-0242ac120002.png
+java.io.FileInputStream@3cddd965
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/cc3c884a-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@33eabf6d
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/76befbe6-2320-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5f835729
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/6aa45bb6-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@5db15c0e
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/8cf76122-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@4b44df64
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/0a122382-2321-11ee-be56-0242ac120002.jpg
+java.io.FileInputStream@2ecabaa0
+savePath = /workspace/MyGumiWorld_BackEnd/src/main/resources/static/store/c6b5b60c-2321-11ee-be56-0242ac120002.png
+java.io.FileInputStream@3776bb22
+2023-07-19 14:32:19.967  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 14:32:19.967  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 14:32:19.967  INFO 3640401 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+2023-07-19 14:32:20.025  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:32:20.025  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:32:20.025  INFO 3640401 --- [nio-8080-exec-9] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.2"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"232"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.2"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.4"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"96","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.2","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"232","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.2","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-19 14:32:22.556  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-19 14:32:22.556  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230719
+2023-07-19 14:32:22.556  INFO 3640401 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2200
+2023-07-19 14:32:22.590  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-19 14:32:22.590  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230719
+2023-07-19 14:32:22.590  INFO 3640401 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 시각:23
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230719","baseTime":"2200","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"REH","nx":86,"ny":95,"obsrValue":"96"},{"baseDate":"20230719","baseTime":"2200","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230719","baseTime":"2200","category":"T1H","nx":86,"ny":95,"obsrValue":"23.2"},{"baseDate":"20230719","baseTime":"2200","category":"UUU","nx":86,"ny":95,"obsrValue":"0.3"},{"baseDate":"20230719","baseTime":"2200","category":"VEC","nx":86,"ny":95,"obsrValue":"232"},{"baseDate":"20230719","baseTime":"2200","category":"VVV","nx":86,"ny":95,"obsrValue":"0.2"},{"baseDate":"20230719","baseTime":"2200","category":"WSD","nx":86,"ny":95,"obsrValue":"0.4"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"PTY","baseTime":"2200"},{"obsrValue":"96","baseDate":"20230719","nx":86,"ny":95,"category":"REH","baseTime":"2200"},{"obsrValue":"0","baseDate":"20230719","nx":86,"ny":95,"category":"RN1","baseTime":"2200"},{"obsrValue":"23.2","baseDate":"20230719","nx":86,"ny":95,"category":"T1H","baseTime":"2200"},{"obsrValue":"0.3","baseDate":"20230719","nx":86,"ny":95,"category":"UUU","baseTime":"2200"},{"obsrValue":"232","baseDate":"20230719","nx":86,"ny":95,"category":"VEC","baseTime":"2200"},{"obsrValue":"0.2","baseDate":"20230719","nx":86,"ny":95,"category":"VVV","baseTime":"2200"},{"obsrValue":"0.4","baseDate":"20230719","nx":86,"ny":95,"category":"WSD","baseTime":"2200"}]
