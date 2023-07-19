@@ -52,4 +52,6 @@ public class MemberService {
         boardMapper.deleteUserReply(id);
     }
 
+
+
 }

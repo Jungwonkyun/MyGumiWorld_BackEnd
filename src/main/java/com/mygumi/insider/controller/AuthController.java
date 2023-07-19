@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -35,6 +38,36 @@ public class AuthController {
     public ResponseEntity<?>loginKakao(@ApiParam(value = "카카오 로그인을 한 후 [redirect URL]?code=" +
             "뒤에 생기는 Kakao에서 보내주는 Token") @RequestBody KakaoLoginParams params) {
         return ResponseEntity.ok(oAuthLoginService.isMember(params));
+    }
+
+
+    @ResponseBody
+    @PostMapping("/getaccesstoken")
+    public void kakaoaccess(@RequestBody String Token)
+    {
+        System.out.println(oAuthLoginService.getKakaoAccessToken(Token));
+    }
+
+
+    @ApiOperation(value = "모바일버전 access token 넣으면 저장후 jwt 반환")
+    @ResponseBody
+    @PostMapping("/kakaomobile")
+    public ResponseEntity<?> kakaouser(@RequestBody String accessToken) {
+
+        Map<String,Object> resultMap = new HashMap<>();
+
+        try {
+            // 액세스 토큰을 이용하여 카카오 서버에서 유저 정보(닉네임, 이메일) 받아오기
+            Map<String, Object> userInfo = oAuthLoginService.getUserInfo(accessToken);
+            resultMap.put("message","success");
+            resultMap.put("user",userInfo);
+
+        } catch (Exception e) {
+            resultMap.put("message","fail");
+            e.printStackTrace();
+        }
+
+        return ResponseEntity.ok(resultMap);
     }
 
 
