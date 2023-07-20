@@ -94,7 +94,7 @@ public class MealServiceImpl implements MealService {
     private void updateDTO(String Date, String MealType, int[] MealArray, String title, String now) throws Exception {
         List<MealDTO> NowMealList = callAPIList(Date, MealType, MealArray, title, now);
         List<MealDTO> meallist = mealRepository.findByTitle(title);
-        for(int i = 0; i <= 1; i++){
+        for(int i : MealArray){
             MealDTO NowMeal =  NowMealList.get(i); // api
 
             MealDTO meal = meallist.get(i); // DB
