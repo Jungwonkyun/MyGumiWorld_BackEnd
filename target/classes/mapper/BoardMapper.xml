@@ -111,7 +111,7 @@
 	<!-- 게시물 수정 -->
 	<update id="modifyBoard" parameterType="boardDto">
 		UPDATE board
-		SET title = #{title}, content=#{content}, update_at = NOW(), folder=#{folder}, originName=#{originName}, saveName=#{saveName}
+		SET title = #{title}, content=#{content}, updateDate=NOW(), folder=#{folder}, originName=#{originName}, saveName=#{saveName}
 		WHERE boardNo = #{boardNo}
 	</update>
 	

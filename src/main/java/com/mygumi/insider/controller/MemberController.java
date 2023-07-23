@@ -26,7 +26,7 @@ public class MemberController {
 
     @ApiOperation(value = "해당 유저의 닉네임을 설정하는 API",
             notes = "Authorization: Bearer $[JWT Token], {nickName: $[바꾸고 싶은 닉네임]} 형식으로 보내준다 파라미터는 1개")
-    @PutMapping("/makenickName")
+    @PostMapping("/makenickName")
     public ResponseEntity<Member> makeUserMadeNickName(@ApiParam(value = "유저 jwt 토큰") @RequestHeader("Authorization") String jwt,
                                                        @ApiParam(value = "바꾸고 싶은 nickName (map 형식)")@RequestBody Map<String,String> param){
 
