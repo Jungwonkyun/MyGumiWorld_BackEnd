@@ -47,7 +47,7 @@ public class MealServiceImpl implements MealService {
         nowTime = LocalTime.now();
 
         Date = nowDate.format(formatDay);
-        int hour = Integer.parseInt(nowTime.format(formatHour))+9;
+        int hour = Integer.parseInt(nowTime.format(formatHour));
         if(hour > 23){
             Date = nowDate.plusDays(1).format(formatDay);
             hour = hour - 24;
