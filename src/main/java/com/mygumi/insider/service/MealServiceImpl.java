@@ -46,6 +46,7 @@ public class MealServiceImpl implements MealService {
         nowDate = LocalDate.now();
         nowTime = LocalTime.now();
 
+        Date = nowDate.format(formatDay);
         int hour = Integer.parseInt(nowTime.format(formatHour))+9;
         if(hour > 23){
             Date = nowDate.plusDays(1).format(formatDay);
@@ -54,7 +55,6 @@ public class MealServiceImpl implements MealService {
         // 생성 or 수정 시각 기록 후 분당 호출 1번으로 제한
         String now = nowTime.format(formatHourMin);
 
-        Date = nowDate.format(formatDay);
 
         Hour = Integer.toString(hour);
         logger.info("현재 날짜:{}", Date);
@@ -94,7 +94,7 @@ public class MealServiceImpl implements MealService {
     private void updateDTO(String Date, String MealType, int[] MealArray, String title, String now) throws Exception {
         List<MealDTO> NowMealList = callAPIList(Date, MealType, MealArray, title, now);
         List<MealDTO> meallist = mealRepository.findByTitle(title);
-        for(int i = 0; i <= 1; i++){
+        for(int i : MealArray){
             MealDTO NowMeal =  NowMealList.get(i); // api
 
             MealDTO meal = meallist.get(i); // DB
