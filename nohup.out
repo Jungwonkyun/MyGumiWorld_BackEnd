@@ -3978,3 +3978,714 @@ Hibernate:
         store0_.store_name as store_na8_5_ 
     from
         store store0_
+2023-07-24 00:13:52.009  INFO 91471 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:13:52.012  INFO 91471 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:13:52.012  INFO 91471 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+2023-07-24 00:13:52.018  INFO 91471 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:13:52.019  INFO 91471 --- [nio-8080-exec-5] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:13:52.019  INFO 91471 --- [nio-8080-exec-5] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-24 00:13:53.907  INFO 91471 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 최신글 3개 반환
+2023-07-24 00:13:53.909 DEBUG 91471 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==>  Preparing: SELECT boardNo, title FROM board WHERE status = 1 ORDER BY createDate desc LIMIT 3;
+2023-07-24 00:13:53.909 DEBUG 91471 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : ==> Parameters: 
+2023-07-24 00:13:53.909 DEBUG 91471 --- [nio-8080-exec-6] c.m.i.mapper.BoardMapper.getNewList      : <==      Total: 3
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"77"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.5"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"-0.1"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"176"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2.9"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.9"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"77","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.5","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"-0.1","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"176","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-24 00:14:32.217  INFO 91471 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:14:32.219  INFO 91471 --- [nio-8080-exec-7] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:14:32.219  INFO 91471 --- [nio-8080-exec-7] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+2023-07-24 00:14:32.219  INFO 91471 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:14:32.219  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:14:32.219  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"77"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.5"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"-0.1"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"176"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2.9"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.9"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"77","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.5","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"-0.1","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"176","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-24 00:14:56.705  INFO 91471 --- [nio-8080-exec-5] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:14:56.706  INFO 91471 --- [nio-8080-exec-5] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:14:56.706  INFO 91471 --- [nio-8080-exec-5] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+2023-07-24 00:14:56.784  INFO 91471 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:14:56.786  INFO 91471 --- [nio-8080-exec-3] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:14:56.788  INFO 91471 --- [nio-8080-exec-3] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+response body : {"id":2911713355,"connected_at":"2023-07-14T16:13:01Z","properties":{"nickname":"김진영","profile_image":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_640x640.jpg","thumbnail_image":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg"},"kakao_account":{"profile_nickname_needs_agreement":false,"profile_image_needs_agreement":false,"profile":{"nickname":"김진영","thumbnail_image_url":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg","profile_image_url":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_640x640.jpg","is_default_image":true},"has_email":true,"email_needs_agreement":false,"is_email_valid":true,"is_email_verified":true,"email":"9132225@naver.com"}}
+Hibernate: 
+    select
+        member0_.id as id1_1_,
+        member0_.email as email2_1_,
+        member0_.kakao_id as kakao_id3_1_,
+        member0_.nickname as nickname4_1_,
+        member0_.o_auth_provider as o_auth_p5_1_,
+        member0_.thumbnail_image_url as thumbnai6_1_,
+        member0_.usernickname as usernick7_1_,
+        member0_.valid as valid8_1_ 
+    from
+        member member0_ 
+    where
+        member0_.kakao_id=?
+2023-07-24 00:14:58.238 ERROR 91471 --- [nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: JWT String argument cannot be null or empty.] with root cause
+
+java.lang.IllegalArgumentException: JWT String argument cannot be null or empty.
+	at io.jsonwebtoken.lang.Assert.hasText(Assert.java:132) ~[jjwt-api-0.11.5.jar!/:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:527) ~[jjwt-impl-0.11.5.jar!/:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589) ~[jjwt-impl-0.11.5.jar!/:0.11.5]
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173) ~[jjwt-impl-0.11.5.jar!/:0.11.5]
+	at com.mygumi.insider.infra.JwtTokenProvider.parseClaims(JwtTokenProvider.java:40) ~[classes!/:0.0.1-SNAPSHOT]
+	at com.mygumi.insider.infra.JwtTokenProvider.extractSubject(JwtTokenProvider.java:31) ~[classes!/:0.0.1-SNAPSHOT]
+	at com.mygumi.insider.domain.oauth.AuthTokensGenerator.extractMemberId(AuthTokensGenerator.java:32) ~[classes!/:0.0.1-SNAPSHOT]
+	at com.mygumi.insider.controller.AuthController.extractIdByAccessToken(AuthController.java:79) ~[classes!/:0.0.1-SNAPSHOT]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.28.jar!/:5.3.28]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.76.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.28.jar!/:5.3.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.28.jar!/:5.3.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.28.jar!/:5.3.28]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.28.jar!/:5.3.28]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.76.jar!/:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"77"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.5"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"-0.1"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"176"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2.9"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.9"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"77","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.5","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"-0.1","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"176","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+2023-07-24 00:15:06.032  INFO 91471 --- [nio-8080-exec-2] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:15:06.037  INFO 91471 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:15:06.039  INFO 91471 --- [nio-8080-exec-2] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"77"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.5"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"-0.1"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"176"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2.9"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.9"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"77","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.5","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"-0.1","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"176","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-24 00:15:06.479  INFO 91471 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:15:06.480  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:15:06.480  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+2023-07-24 00:15:52.763  INFO 91471 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:15:52.763  INFO 91471 --- [nio-8080-exec-7] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:15:52.763  INFO 91471 --- [nio-8080-exec-7] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+2023-07-24 00:15:52.770  INFO 91471 --- [io-8080-exec-10] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:15:52.770  INFO 91471 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:15:52.770  INFO 91471 --- [io-8080-exec-10] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"77"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.5"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"-0.1"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"176"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2.9"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.9"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"77","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.5","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"-0.1","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"176","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.9","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+2023-07-24 00:16:43.153  INFO 91471 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:16:43.154  INFO 91471 --- [nio-8080-exec-3] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:16:43.154  INFO 91471 --- [nio-8080-exec-3] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-24 00:16:43.179  INFO 91471 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:16:43.179  INFO 91471 --- [nio-8080-exec-6] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:16:43.179  INFO 91471 --- [nio-8080-exec-6] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"79"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.3"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"197"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"79","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.3","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"0.6","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"197","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.1","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-24 00:16:49.518  INFO 91471 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:16:49.518  INFO 91471 --- [nio-8080-exec-9] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:16:49.518  INFO 91471 --- [nio-8080-exec-9] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"79"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.3"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"197"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"79","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.3","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"0.6","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"197","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.1","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+2023-07-24 00:16:49.605  INFO 91471 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:16:49.605  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:16:49.605  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+response body : {"id":2911713355,"connected_at":"2023-07-14T16:13:01Z","properties":{"nickname":"김진영","profile_image":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_640x640.jpg","thumbnail_image":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg"},"kakao_account":{"profile_nickname_needs_agreement":false,"profile_image_needs_agreement":false,"profile":{"nickname":"김진영","thumbnail_image_url":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg","profile_image_url":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_640x640.jpg","is_default_image":true},"has_email":true,"email_needs_agreement":false,"is_email_valid":true,"is_email_verified":true,"email":"9132225@naver.com"}}
+Hibernate: 
+    select
+        member0_.id as id1_1_,
+        member0_.email as email2_1_,
+        member0_.kakao_id as kakao_id3_1_,
+        member0_.nickname as nickname4_1_,
+        member0_.o_auth_provider as o_auth_p5_1_,
+        member0_.thumbnail_image_url as thumbnai6_1_,
+        member0_.usernickname as usernick7_1_,
+        member0_.valid as valid8_1_ 
+    from
+        member member0_ 
+    where
+        member0_.kakao_id=?
+2023-07-24 00:18:18.552  INFO 91471 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:18:18.552  INFO 91471 --- [nio-8080-exec-1] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:18:18.552  INFO 91471 --- [nio-8080-exec-1] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+2023-07-24 00:18:18.597  INFO 91471 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:18:18.597  INFO 91471 --- [nio-8080-exec-7] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:18:18.597  INFO 91471 --- [nio-8080-exec-7] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"79"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.3"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"197"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"79","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.3","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"0.6","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"197","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.1","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+2023-07-24 00:18:45.581  INFO 91471 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:18:45.603  INFO 91471 --- [nio-8080-exec-4] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:18:45.603  INFO 91471 --- [nio-8080-exec-4] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+2023-07-24 00:18:45.584  INFO 91471 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:18:45.604  INFO 91471 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:18:45.604  INFO 91471 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"79"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.3"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"197"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"79","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.3","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"0.6","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"197","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.1","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+2023-07-24 00:19:02.023  INFO 91471 --- [nio-8080-exec-9] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:19:02.023  INFO 91471 --- [nio-8080-exec-9] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:19:02.023  INFO 91471 --- [nio-8080-exec-9] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+2023-07-24 00:19:02.061  INFO 91471 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:19:02.061  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:19:02.061  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"79"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.3"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"197"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"79","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.3","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"0.6","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"197","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.1","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-24 00:19:08.607  INFO 91471 --- [nio-8080-exec-3] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:19:08.607  INFO 91471 --- [nio-8080-exec-3] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:19:08.607  INFO 91471 --- [nio-8080-exec-3] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+response body : {"id":2911713355,"connected_at":"2023-07-14T16:13:01Z","properties":{"nickname":"김진영","profile_image":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_640x640.jpg","thumbnail_image":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg"},"kakao_account":{"profile_nickname_needs_agreement":false,"profile_image_needs_agreement":false,"profile":{"nickname":"김진영","thumbnail_image_url":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg","profile_image_url":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_640x640.jpg","is_default_image":true},"has_email":true,"email_needs_agreement":false,"is_email_valid":true,"is_email_verified":true,"email":"9132225@naver.com"}}
+Hibernate: 
+    select
+        member0_.id as id1_1_,
+        member0_.email as email2_1_,
+        member0_.kakao_id as kakao_id3_1_,
+        member0_.nickname as nickname4_1_,
+        member0_.o_auth_provider as o_auth_p5_1_,
+        member0_.thumbnail_image_url as thumbnai6_1_,
+        member0_.usernickname as usernick7_1_,
+        member0_.valid as valid8_1_ 
+    from
+        member member0_ 
+    where
+        member0_.kakao_id=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"79"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.3"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"197"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"79","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.3","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"0.6","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"197","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.1","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+2023-07-24 00:19:08.988  INFO 91471 --- [nio-8080-exec-1] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:19:08.988  INFO 91471 --- [nio-8080-exec-1] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:19:08.988  INFO 91471 --- [nio-8080-exec-1] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-24 00:19:53.840  INFO 91471 --- [nio-8080-exec-6] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:19:53.840  INFO 91471 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:19:53.840  INFO 91471 --- [nio-8080-exec-6] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+2023-07-24 00:19:53.841  INFO 91471 --- [nio-8080-exec-4] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:19:53.841  INFO 91471 --- [nio-8080-exec-4] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:19:53.841  INFO 91471 --- [nio-8080-exec-4] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"79"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.3"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"197"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"79","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.3","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"0.6","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"197","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.1","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+2023-07-24 00:20:07.468  INFO 91471 --- [nio-8080-exec-8] c.m.insider.controller.BoardController   : 날씨 출력
+2023-07-24 00:20:07.468  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 날짜:20230723
+2023-07-24 00:20:07.468  INFO 91471 --- [nio-8080-exec-8] c.m.insider.service.WeatherServiceImpl   : 현재 시각:2300
+Response code: 200
+{"response":{"header":{"resultCode":"00","resultMsg":"NORMAL_SERVICE"},"body":{"dataType":"JSON","items":{"item":[{"baseDate":"20230723","baseTime":"2300","category":"PTY","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"REH","nx":86,"ny":95,"obsrValue":"79"},{"baseDate":"20230723","baseTime":"2300","category":"RN1","nx":86,"ny":95,"obsrValue":"0"},{"baseDate":"20230723","baseTime":"2300","category":"T1H","nx":86,"ny":95,"obsrValue":"27.3"},{"baseDate":"20230723","baseTime":"2300","category":"UUU","nx":86,"ny":95,"obsrValue":"0.6"},{"baseDate":"20230723","baseTime":"2300","category":"VEC","nx":86,"ny":95,"obsrValue":"197"},{"baseDate":"20230723","baseTime":"2300","category":"VVV","nx":86,"ny":95,"obsrValue":"2"},{"baseDate":"20230723","baseTime":"2300","category":"WSD","nx":86,"ny":95,"obsrValue":"2.1"}]},"pageNo":1,"numOfRows":100,"totalCount":8}}}
+[{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"PTY","baseTime":"2300"},{"obsrValue":"79","baseDate":"20230723","nx":86,"ny":95,"category":"REH","baseTime":"2300"},{"obsrValue":"0","baseDate":"20230723","nx":86,"ny":95,"category":"RN1","baseTime":"2300"},{"obsrValue":"27.3","baseDate":"20230723","nx":86,"ny":95,"category":"T1H","baseTime":"2300"},{"obsrValue":"0.6","baseDate":"20230723","nx":86,"ny":95,"category":"UUU","baseTime":"2300"},{"obsrValue":"197","baseDate":"20230723","nx":86,"ny":95,"category":"VEC","baseTime":"2300"},{"obsrValue":"2","baseDate":"20230723","nx":86,"ny":95,"category":"VVV","baseTime":"2300"},{"obsrValue":"2.1","baseDate":"20230723","nx":86,"ny":95,"category":"WSD","baseTime":"2300"}]
+Hibernate: 
+    select
+        tip0_.id as id1_6_,
+        tip0_.description as descript2_6_,
+        tip0_.good as good3_6_,
+        tip0_.subject as subject4_6_ 
+    from
+        tip tip0_
+2023-07-24 00:20:07.986  INFO 91471 --- [nio-8080-exec-7] c.m.insider.controller.BoardController   : 식사 목록 반환
+2023-07-24 00:20:07.987  INFO 91471 --- [nio-8080-exec-7] c.m.insider.service.MealServiceImpl      : 현재 날짜:20230724
+2023-07-24 00:20:07.987  INFO 91471 --- [nio-8080-exec-7] c.m.insider.service.MealServiceImpl      : 현재 시각:0
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+Hibernate: 
+    select
+        mealdto0_.id as id1_0_,
+        mealdto0_.course as course2_0_,
+        mealdto0_.kcal as kcal3_0_,
+        mealdto0_.menu as menu4_0_,
+        mealdto0_.modified_at as modified5_0_,
+        mealdto0_.photourl as photourl6_0_,
+        mealdto0_.time as time7_0_,
+        mealdto0_.title as title8_0_ 
+    from
+        mealdto mealdto0_ 
+    where
+        mealdto0_.title=?
+response body : {"id":2911713355,"connected_at":"2023-07-14T16:13:01Z","properties":{"nickname":"김진영","profile_image":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_640x640.jpg","thumbnail_image":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg"},"kakao_account":{"profile_nickname_needs_agreement":false,"profile_image_needs_agreement":false,"profile":{"nickname":"김진영","thumbnail_image_url":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_110x110.jpg","profile_image_url":"http://k.kakaocdn.net/dn/dpk9l1/btqmGhA2lKL/Oz0wDuJn1YV2DIn92f6DVK/img_640x640.jpg","is_default_image":true},"has_email":true,"email_needs_agreement":false,"is_email_valid":true,"is_email_verified":true,"email":"9132225@naver.com"}}
+Hibernate: 
+    select
+        member0_.id as id1_1_,
+        member0_.email as email2_1_,
+        member0_.kakao_id as kakao_id3_1_,
+        member0_.nickname as nickname4_1_,
+        member0_.o_auth_provider as o_auth_p5_1_,
+        member0_.thumbnail_image_url as thumbnai6_1_,
+        member0_.usernickname as usernick7_1_,
+        member0_.valid as valid8_1_ 
+    from
+        member member0_ 
+    where
+        member0_.kakao_id=?

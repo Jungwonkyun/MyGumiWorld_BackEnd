@@ -24,6 +24,7 @@ import com.mygumi.insider.dto.BoardDto;
 import com.mygumi.insider.dto.CommentDto;
 import com.mygumi.insider.dto.ReplyCommentDto;
 import com.mygumi.insider.service.BoardService;
+import com.mygumi.insider.dto.Report;
 
 @CrossOrigin(origins = { "*" }, maxAge=600)
 @RestController
