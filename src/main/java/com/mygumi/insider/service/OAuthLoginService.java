@@ -40,6 +40,10 @@ public class OAuthLoginService {
         if(memberId == 0L){
             Long newMemberId = newMember(oAuthInfoResponse);
             authTokens = authTokensGenerator.generate(newMemberId);
+            
+            Optional<Member> oMember = memberRepository.findById(newMemberId);
+            Member member = oMember.get();
+            member.setUsernickname(member.getNickname());
         }
 
         //DB에 이미 유저가 있을 때
@@ -115,7 +119,8 @@ public class OAuthLoginService {
                         .thumbnail_image_url(profile)
                         .kakaoId(id)
                         .build();
-
+                
+                member.setUsernickname(nickname);
                 Long newMemberId = memberRepository.save(member).getId();
                 authTokens = authTokensGenerator.generate(newMemberId);
             }
