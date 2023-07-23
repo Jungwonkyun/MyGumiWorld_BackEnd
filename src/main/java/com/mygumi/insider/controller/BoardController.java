@@ -211,8 +211,9 @@ public class BoardController {
 				String projectPath = new File("").getAbsolutePath();
 				String fileSavePath = "/src/main/resources/static/files";
 				String originName = files.getOriginalFilename();
-				String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
-				boardDto.setFolder(URL1+saveName+URL2);
+				// String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
+                String saveName = UUID.randomUUID().toString() + ".png";
+				boardDto.setFolder(URL1 + saveName);
 				boardDto.setOriginName(originName);
 				boardDto.setSaveName(saveName);
 				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
