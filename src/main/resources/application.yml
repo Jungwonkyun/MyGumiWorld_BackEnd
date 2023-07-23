@@ -43,6 +43,7 @@ spring:
     username: insider
     password: ssafy
   mvc:
+    static-path-pattern: /static/**
     pathmatch:
       matching-strategy: ant_path_matcher
   application:

@@ -35,10 +35,7 @@ public class BoardController {
 	private final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	private static final String SUCCESS = "success";
 	private static final String FAIL = "fail";
-	private static final String URL1 = "https://proxy.goorm.io/service/64a432721173303c40366663_d0UKmPGX2nZ0fC2MbAA.run.goorm.io/9080/file/load/";
-    private static final String URL2 = "?path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRjE1NzRhMTI5LTZiZWUtNDdmMi1hZTg5LTVmMjc3OTA4MDc3My5wbmc=&docker_id=d0UKmPGX2nZ0fC2MbAA&secure_session_id=z4yu_n3ppLwgv5ZR-F_EqT82lEIaE_ri";
-	// private static final String URL2 = "path=d29ya3NwYWNlJTJGTXlHdW1pV29ybGRfQmFja0VuZCUyRnNyYyUyRm1haW4lMkZyZXNvdXJjZXMlMkZzdGF0aWMlMkZmaWxlcyUyRmQ0YWE2ZThjLWEwZTAtNGRlNi04YzhjLTZiNjQzOTNiODE2YS5wbmc=&docker_id=d3EDtUkpmSQtVTvRKp4&secure_session_id=tSqBga4uiZ7LH5w3yaI1VsAsZbXVep6i";
-
+	private static final String URL1 = "https://mygumiworld-backend-sxxzy.run.goorm.site/static/files/";
 	@Autowired
 	private BoardService boardService;
 
@@ -125,8 +122,9 @@ public class BoardController {
 				String projectPath = new File("").getAbsolutePath();
 				String fileSavePath = "/src/main/resources/static/files";
 				String originName = files.getOriginalFilename();
-				String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
-				boardDto.setFolder(URL1 + saveName + URL2);
+				//String saveName = UUID.randomUUID().toString() + originName.substring(originName.lastIndexOf('.'));
+                String saveName = UUID.randomUUID().toString() + ".png";
+				boardDto.setFolder(URL1 + saveName);
 				boardDto.setOriginName(originName);
 				boardDto.setSaveName(saveName);
 				logger.debug("파일 저장 : {}", projectPath+fileSavePath);
