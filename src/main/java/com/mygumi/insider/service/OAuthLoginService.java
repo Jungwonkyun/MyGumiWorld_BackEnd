@@ -35,7 +35,7 @@ public class OAuthLoginService {
         Map<String,Object> loginInfo = new HashMap<>();
         AuthTokens authTokens = null;
         boolean check = false;
-
+        String nick = "";
 
         //만약 DB에 유저 정보가 없다면
         if(memberId == 0L){
@@ -44,17 +44,23 @@ public class OAuthLoginService {
             
             Optional<Member> oMember = memberRepository.findById(newMemberId);
             Member member = oMember.get();
-            member.setUsernickname(member.getNickname());
+            //member.setUsernickname(member.getNickname());
+            nick = member.getUsernickname();
         }
 
         //DB에 이미 유저가 있을 때
         else{
             authTokens = authTokensGenerator.generate(memberId);
             check = true;
+            Optional<Member> oMember = memberRepository.findById(memberId);
+            Member member = oMember.get();
+            nick = member.getUsernickname();
         }
+
 
         loginInfo.put("jwt",authTokens);
         loginInfo.put("isPresent" , check);
+        loginInfo.put("nickname" , nick);
 
         return loginInfo;
     }
@@ -67,6 +73,7 @@ public class OAuthLoginService {
         Map<String,Object> loginInfo = new HashMap<>();
         AuthTokens authTokens = null;
         boolean check = false;
+        String nick = "";
 
         try {
             URL url = new URL(postURL);
@@ -121,19 +128,28 @@ public class OAuthLoginService {
                         .kakaoId(id)
                         .build();
                 
-                member.setUsernickname(nickname);
+                //member.setUsernickname(nickname);
+
                 Long newMemberId = memberRepository.save(member).getId();
                 authTokens = authTokensGenerator.generate(newMemberId);
+
+                Optional<Member> oMember = memberRepository.findById(newMemberId);
+                Member mem = oMember.get();
+                nick = mem.getUsernickname();
             }
 
             //DB에 이미 유저가 있을 때
             else{
                 authTokens = authTokensGenerator.generate(memberId);
                 check = true;
+                Optional<Member> oMember = memberRepository.findById(memberId);
+                Member mem = oMember.get();
+                nick = mem.getUsernickname();
             }
 
             loginInfo.put("jwt",authTokens);
             loginInfo.put("isPresent" , check);
+            loginInfo.put("nickname" , nick);
 
             return loginInfo;
 
