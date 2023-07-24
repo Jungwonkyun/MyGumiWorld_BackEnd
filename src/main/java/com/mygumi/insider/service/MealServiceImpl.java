@@ -77,8 +77,8 @@ public class MealServiceImpl implements MealService {
         // DB에서 조회 시도
         List<MealDTO> meallist = mealRepository.findByTitle(title);
         if (meallist.size() != 0) { // DB에 있을 때
-            for (int i = 0; i <= 1; i++){
-                if (((hour>= 11 && hour < 13) || hour >= 17) && meallist.get(i).getPhotoURL() == null
+            for (int i : MealArray){
+                if (((hour>= 10 && hour < 13) || hour >= 17) && meallist.get(i).getPhotoURL() == null
                     && !meallist.get(i).getModifiedAt().equals(now)){
                     updateDTO(Date, MealType, MealArray, title, now);
                     break;
