@@ -51,7 +51,8 @@ public class MealController {
             return new ResponseEntity<Map<String, Object>>(resultMap, HttpStatus.OK);
         } catch (Exception e) {
             resultMap.put("message", FAIL);
-            return new ResponseEntity<Map<String, Object>>(resultMap, HttpStatus.OK);
+            resultMap.put("error", e.toString());
+            return new ResponseEntity<Map<String, Object>>(resultMap, HttpStatus.BAD_REQUEST);
         }
     }
 }

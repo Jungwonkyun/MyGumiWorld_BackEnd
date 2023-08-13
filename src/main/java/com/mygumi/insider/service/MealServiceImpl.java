@@ -77,7 +77,7 @@ public class MealServiceImpl implements MealService {
         // DB에서 조회 시도
         List<MealDTO> meallist = mealRepository.findByTitle(title);
         if (meallist.size() != 0) { // DB에 있을 때
-            for (int i : MealArray){
+            for (int i = 0 ; i < MealArray.length ; i++){
                 if (((hour>= 10 && hour < 13) || hour >= 17) && meallist.get(i).getPhotoURL() == null
                     && !meallist.get(i).getModifiedAt().equals(now)){
                     updateDTO(Date, MealType, MealArray, title, now);
@@ -94,7 +94,7 @@ public class MealServiceImpl implements MealService {
     private void updateDTO(String Date, String MealType, int[] MealArray, String title, String now) throws Exception {
         List<MealDTO> NowMealList = callAPIList(Date, MealType, MealArray, title, now);
         List<MealDTO> meallist = mealRepository.findByTitle(title);
-        for(int i : MealArray){
+        for(int i = 0 ; i < MealArray.length ; i++){
             MealDTO NowMeal =  NowMealList.get(i); // api
 
             MealDTO meal = meallist.get(i); // DB
