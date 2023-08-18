@@ -7,6 +7,5 @@
 > 싸피 생활을 더 편하고 즐겁게! <br>
 > 10기들을 위한 싸피 가이드 모바일 애플리케이션
 
-
 ![Section 2](https://github.com/Gumi-Life-Project/GLP_Android/assets/123930169/6eb052de-69a6-4fcf-88b7-7eedb51c4c13)
 
